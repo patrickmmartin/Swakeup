@@ -76,22 +76,27 @@ var
   MachineList : TStringList;
   TempMachines : TMachines;
   i : integer;
+  hostsfilename : string;
 begin
+  hostsfilename := ExtractFilePath(Application.ExeName) + FConfigFile;
+  if not (FileExists(hostsfilename))
+    then Exit;
+
   MachineList := TStringList.Create;
   try
-    MachineList.LoadFromFile(ExtractFilePath(Application.ExeName) + FConfigFile);
-    SetLength(TempMachines, MachineList.Count);
+    MachineList.LoadFromFile(hostsfilename);
+      SetLength(TempMachines, MachineList.Count);
 
-    for i := 0 to MachineList.Count - 1 do
-    try
-      TempMachines[i] := ParseMachineEntry(MachineList[i]);
-    except
-      on E : Exception do
-        raise Exception.CreateFmt('Failed to read machine on line %d'#13#10'%s', [i, E.Message]);
-    end;
+      for i := 0 to MachineList.Count - 1 do
+      try
+        TempMachines[i] := ParseMachineEntry(MachineList[i]);
+      except
+        on E : Exception do
+          raise Exception.CreateFmt('Failed to read machine on line %d'#13#10'%s', [i, E.Message]);
+      end;
 
-    { if all kosher }
-    FMachines := TempMachines;
+      { if all kosher }
+      FMachines := TempMachines;
   finally
     MachineList.Free;
   end;
