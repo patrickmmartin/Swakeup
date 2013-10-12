@@ -1,0 +1,6 @@
+*.~dfm
+*.~pas
+
+/bin/NetController.exe
+
+/dcu/*.dcu
