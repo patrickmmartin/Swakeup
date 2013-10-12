@@ -32,7 +32,7 @@ var
 implementation
 
 uses
-  NetInfo, XPMenu, MainDM, ResourceDM;
+  NetInfo, XPMenu, MainDM, ResourceDM, MACUtils, NameUtils;
 
 {$R *.dfm}
 
@@ -53,6 +53,7 @@ var
   found : boolean;
   ListItem : TListItem;
   i: integer;
+  IPAddress, WSAErr : string;
 begin
 
   i := 0;
@@ -72,6 +73,9 @@ begin
      ListItem.SubItems.Clear();
      ListItem.SubItems.Add(Comment);
      ListItem.ImageIndex := 0;
+     //
+     if (GetIPFromHost(RemoteName, IPAddress, WSAErr)) then
+     ListItem.SubItems.Add(GetRemoteMacAddress(IPAddress));
    end;
 
 end;

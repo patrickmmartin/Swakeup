@@ -52,6 +52,10 @@ object frmServers: TfrmServers
         item
           AutoSize = True
           Caption = 'Comment'
+        end
+        item
+          Caption = 'MAC'
+          Width = 140
         end>
       ColumnClick = False
       HideSelection = False
