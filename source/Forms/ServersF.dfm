@@ -1,8 +1,8 @@
 object frmServers: TfrmServers
   Left = 256
-  Top = 127
-  Width = 435
-  Height = 260
+  Top = 157
+  Width = 523
+  Height = 334
   BorderIcons = [biSystemMenu]
   Caption = 'Locate Servers'
   Color = clBtnFace
@@ -13,7 +13,6 @@ object frmServers: TfrmServers
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
-  PopupMode = pmAuto
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
@@ -29,8 +28,8 @@ object frmServers: TfrmServers
   object pnlPages: TPanel
     Left = 0
     Top = 0
-    Width = 427
-    Height = 232
+    Width = 507
+    Height = 296
     Align = alClient
     BevelInner = bvLowered
     BevelOuter = bvNone
@@ -38,8 +37,8 @@ object frmServers: TfrmServers
     object lvServers: TListView
       Left = 1
       Top = 1
-      Width = 425
-      Height = 230
+      Width = 505
+      Height = 294
       Hint = 'list of servers'
       Align = alClient
       BevelOuter = bvNone
@@ -56,10 +55,6 @@ object frmServers: TfrmServers
         end>
       ColumnClick = False
       HideSelection = False
-      Items.ItemData = {
-        014D0000000100000000000000FFFFFFFFFFFFFFFF0100000000000000096C00
-        6F00630061006C0068006F0073007400116C006F00630061006C0068006F0073
-        007400200063006F006D006D0065006E007400FF00}
       ReadOnly = True
       RowSelect = True
       SmallImages = dmResource.imlServers
