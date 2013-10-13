@@ -224,8 +224,6 @@ end;
 
 procedure TNetEnumerator.Enumerate;
 var
-  ComputerName : array[0..MAX_COMPUTERNAME_LENGTH] of Char;
-  dwSize : DWORD;
   ResourcesEnumerated, ResourcesToEnumerate : Cardinal;
 begin
 

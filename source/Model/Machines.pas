@@ -63,10 +63,12 @@ begin
   StringList := TStringList.Create;
   try
     StringList.CommaText := Line;
-    if StringList.Count <> 2 then
-      raise Exception.CreateFmt('Unexpected no of entries (%d) expected 2', [StringList.Count]);
+    if StringList.Count < 2 then
+      raise Exception.CreateFmt('Unexpected no of entries (%d) expected 2 or more', [StringList.Count]);
      Result.Name := StringList[0];
      Result.MAC := StringList[1];
+     if (StringList.Count > 2) then
+       Result.Comment := StringList[2];
   finally
     StringList.Free;
   end;
@@ -87,14 +89,14 @@ begin
   MachineList := TStringList.Create;
   try
     MachineList.LoadFromFile(hostsfilename);
-      SetLength(TempMachines, MachineList.Count);
+    SetLength(TempMachines, MachineList.Count);
 
       { TODO : this could handle files with invalid lines }
-      for i := 0 to MachineList.Count - 1 do
-        TempMachines[i] := ParseMachineEntry(MachineList[i]);
+    for i := 0 to MachineList.Count - 1 do
+      TempMachines[i] := ParseMachineEntry(MachineList[i]);
 
       { if all kosher }
-      FMachines := TempMachines;
+    FMachines := TempMachines;
   finally
     MachineList.Free;
   end;
@@ -102,8 +104,34 @@ begin
 end;
 
 procedure TMachineManager.WriteMachines;
+var
+  MachineList, FieldList : TStringList;
+  i : integer;
+  hostsfilename : string;
 begin
-  {todo implement }
+  hostsfilename := ExtractFilePath(Application.ExeName) + FConfigFile;
+  MachineList := TStringList.Create;
+  try
+    FieldList := TStringList.Create;
+    try
+      for i := 0 to Length(FMachines) - 1 do
+      begin
+        FieldList.Clear;
+        FieldList.Add(FMachines[i].Name);
+        FieldList.Add(FMachines[i].MAC);
+        FieldList.Add(FMachines[i].Comment);
+        MachineList.Add(FieldList.CommaText);
+      end;
+
+      MachineList.SaveToFile(hostsfilename);
+
+      finally
+        FieldList.Free;
+      end;
+
+  finally
+    MachineList.Free;
+  end;
 end;
 
 procedure TMachineManager.ClearMachines;

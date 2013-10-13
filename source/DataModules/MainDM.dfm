@@ -77,6 +77,12 @@ object dmMain: TdmMain
       ImageIndex = 2
       OnExecute = actScanMachineExecute
     end
+    object actSaveMachines: TAction
+      Category = 'List'
+      Caption = 'actSaveMachines'
+      ImageIndex = 4
+      OnExecute = actSaveMachinesExecute
+    end
   end
   object aeMain: TApplicationEvents
     OnHint = aeMainHint

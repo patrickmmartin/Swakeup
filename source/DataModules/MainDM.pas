@@ -29,6 +29,7 @@ type
     actLoadMachines: TAction;
     actScanMachines: TAction;
     actScanMachine: TAction;
+    actSaveMachines: TAction;
     procedure MainFormCreate(Sender: TObject);
     procedure actScanMachinesExecute(Sender: TObject);
     procedure actScanMachineExecute(Sender: TObject);
@@ -37,6 +38,7 @@ type
     procedure actStartMachineExecute(Sender: TObject);
     procedure actLoadMachinesExecute(Sender: TObject);
     procedure actSearchMachinesExecute(Sender: TObject);
+    procedure actSaveMachinesExecute(Sender: TObject);
   private
     {  }
     procedure ViewMachines(const Machines : TMachines);
@@ -241,6 +243,11 @@ begin
     MACAddress := GetRemoteMacAddress(IPAddress);
    MachineManager.AddMachine(Name, MACAddress, Comment);
 
+end;
+
+procedure TdmMain.actSaveMachinesExecute(Sender: TObject);
+begin
+    MachineManager.WriteMachines;
 end;
 
 end.

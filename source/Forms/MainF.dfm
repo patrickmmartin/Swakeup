@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = 177
-  Top = 143
+  Left = 211
+  Top = 240
   Width = 788
   Height = 464
   Caption = 'Net Controller'
@@ -128,6 +128,11 @@ object frmMain: TfrmMain
       Left = 169
       Top = 2
       Action = dmMain.actScanMachines
+    end
+    object ToolButton9: TToolButton
+      Left = 192
+      Top = 2
+      Action = dmMain.actSaveMachines
     end
   end
   object mnuMain: TMainMenu
