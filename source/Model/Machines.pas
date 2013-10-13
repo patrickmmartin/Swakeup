@@ -4,7 +4,7 @@ interface
 
 type
   TMachine = record
-    Name, MAC : string;
+    Name, MAC, Comment : string;
   end;
 
   TMachines = array of TMachine;
@@ -18,6 +18,8 @@ type
   public
     procedure ReadMachines;
     procedure WriteMachines;
+    procedure ClearMachines;
+    procedure AddMachine(const Name, MAC, Comment : string);
     property Machines : TMachines read GetMachines write SetMachines;
     property ConfigFile : string read FConfigFile write FConfigFile;
   end;
@@ -87,13 +89,9 @@ begin
     MachineList.LoadFromFile(hostsfilename);
       SetLength(TempMachines, MachineList.Count);
 
+      { TODO : this could handle files with invalid lines }
       for i := 0 to MachineList.Count - 1 do
-      try
         TempMachines[i] := ParseMachineEntry(MachineList[i]);
-      except
-        on E : Exception do
-          raise Exception.CreateFmt('Failed to read machine on line %d'#13#10'%s', [i, E.Message]);
-      end;
 
       { if all kosher }
       FMachines := TempMachines;
@@ -106,6 +104,42 @@ end;
 procedure TMachineManager.WriteMachines;
 begin
   {todo implement }
+end;
+
+procedure TMachineManager.ClearMachines;
+begin
+  SetLength(FMachines, 0);
+end;
+
+procedure TMachineManager.AddMachine(const Name, MAC, Comment: string);
+var
+  i : integer;
+  found : boolean;
+begin
+
+  found := false;
+  for i := 0 to Length(FMachines) - 1 do
+  begin
+    { a match is on the MAC address }
+    if (FMachines[i].MAC = MAC) then
+    begin
+      FMachines[i].Name := Name;
+      FMachines[i].Comment := Comment;
+      Found := true;
+      break;
+    end;
+  end;
+
+  if not found then
+  begin
+    i := Length(FMachines);
+    SetLength(FMachines, i + 1);
+    FMachines[i].MAC := MAC;
+    FMachines[i].Name := Name;
+    FMachines[i].Comment := Comment;
+  end;
+
+
 end;
 
 end.

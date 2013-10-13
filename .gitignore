@@ -7,3 +7,7 @@
 /dcu
 /bin
 *.~ddp 
+*.~ddp
+
+*.ddp
+*.~dpr

@@ -82,9 +82,6 @@ end;
 
 procedure TfrmServers.LocateAll(Sender: TObject);
 var
-  szComputerName : array[0..MAX_COMPUTERNAME_LENGTH] of Char;
-  dwSize : DWORD;
-var
   WN : TNetEnumerator;
 begin
 
@@ -92,19 +89,10 @@ begin
   WN := TNetEnumerator.Create;
   try
 
-//    pbServers.Position := 0;
-//    pbServers.Max := 100;
     WN.OnContainer := DoContainer;
     WN.OnServer := DoServer;
     WN.OnProgress := DoProgress;
     WN.Enumerate;
-//    pbServers.Position := 0;
-
-    dwSize := sizeof(szComputerName);
-    ZeroMemory(@szComputerName, dwSize);
-    GetComputerName(szComputerName, dwSize);
-    AddServer(szComputerName, sLocalMachine);
-    StatusMessage('');
 
   finally
     Screen.Cursor := crDefault;
