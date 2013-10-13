@@ -29,7 +29,7 @@ object frmServers: TfrmServers
     Left = 0
     Top = 0
     Width = 507
-    Height = 296
+    Height = 295
     Align = alClient
     BevelInner = bvLowered
     BevelOuter = bvNone
@@ -38,7 +38,7 @@ object frmServers: TfrmServers
       Left = 1
       Top = 1
       Width = 505
-      Height = 294
+      Height = 293
       Hint = 'list of servers'
       Align = alClient
       BevelOuter = bvNone

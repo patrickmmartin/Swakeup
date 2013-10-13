@@ -1,8 +1,8 @@
 object frmMain: TfrmMain
-  Left = 177
-  Top = 143
-  Width = 628
-  Height = 475
+  Left = 211
+  Top = 240
+  Width = 788
+  Height = 464
   Caption = 'Net Controller'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,14 +18,14 @@ object frmMain: TfrmMain
   object lvMachines: TListView
     Left = 0
     Top = 29
-    Width = 620
-    Height = 381
+    Width = 772
+    Height = 357
     Align = alClient
     Columns = <
       item
         Caption = 'Name'
         MinWidth = 100
-        Width = 100
+        Width = 140
       end
       item
         Caption = 'MAC'
@@ -60,8 +60,8 @@ object frmMain: TfrmMain
   end
   object sbMain: TStatusBar
     Left = 0
-    Top = 410
-    Width = 620
+    Top = 386
+    Width = 772
     Height = 19
     Panels = <
       item
@@ -70,12 +70,11 @@ object frmMain: TfrmMain
       item
         Width = 50
       end>
-    SimplePanel = False
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 620
+    Width = 772
     Height = 29
     ButtonHeight = 23
     DisabledImages = dmResource.imlMainDisabled
@@ -129,6 +128,11 @@ object frmMain: TfrmMain
       Left = 169
       Top = 2
       Action = dmMain.actScanMachines
+    end
+    object ToolButton9: TToolButton
+      Left = 192
+      Top = 2
+      Action = dmMain.actSaveMachines
     end
   end
   object mnuMain: TMainMenu

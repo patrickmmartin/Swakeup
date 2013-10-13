@@ -21,7 +21,6 @@ var dwRemoteIP: DWORD;
     PhyAddrLen: Longword;
     pMacAddr : array [0..7] of byte;
     I: integer;
-    P: PAnsiChar;
     SendARPLibHandle: THandle;
     SendARP: TSendARP;
 begin
@@ -36,13 +35,15 @@ begin
     if dwremoteIP<>0 then begin
       PhyAddrLen := 8;
       if SendARP(dwremoteIP, 0, @pMacAddr, @PhyAddrLen)=NO_ERROR then begin
-        if PhyAddrLen=6 then begin
-          SetLength(result,12);
-          P := pointer(result);
-          for i := 0 to 5 do begin
-            P[0] := HexChars[pMacAddr[i] shr 4];
-            P[1] := HexChars[pMacAddr[i] and $F];
-            inc(P,2);
+        if PhyAddrLen=6 then
+        begin
+          for i := 0 to 5 do
+          begin
+            if (i <> 0) then
+              Result := Result + '-';
+
+            Result := Result + HexChars[pMacAddr[i] shr 4];
+            Result := Result + HexChars[pMacAddr[i] and $F];
           end;
         end;
       end;

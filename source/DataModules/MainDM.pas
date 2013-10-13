@@ -10,7 +10,8 @@ uses
   StdActns,
   ImgList,
   Controls,
-  ComCtrls
+  ComCtrls,
+  Machines
 
   ;
 
@@ -28,16 +29,20 @@ type
     actLoadMachines: TAction;
     actScanMachines: TAction;
     actScanMachine: TAction;
+    actSaveMachines: TAction;
     procedure MainFormCreate(Sender: TObject);
     procedure actScanMachinesExecute(Sender: TObject);
     procedure actScanMachineExecute(Sender: TObject);
     procedure aeMainHint(Sender: TObject);
-    procedure actSearchMachinesExecute(Sender: TObject);
     procedure actShutdownMachineExecute(Sender: TObject);
     procedure actStartMachineExecute(Sender: TObject);
     procedure actLoadMachinesExecute(Sender: TObject);
+    procedure actSearchMachinesExecute(Sender: TObject);
+    procedure actSaveMachinesExecute(Sender: TObject);
   private
     {  }
+    procedure ViewMachines(const Machines : TMachines);
+    procedure DoServer(const Name, Comment : string);
   public
     procedure MenuMachinesSetup(Sender: TObject);
     procedure MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);
@@ -49,50 +54,28 @@ var
 implementation
 
 uses
-  Machines,
   MainF,
   LanWake,
   LanShutdown,
   Windows,
   ServerInfo,
   WMIUtils,
-  ServersF,
   ResourceDM,
   Variants,
   CursorHelper,
-  Forms;
+  Forms,
+  NetInfo,
+  NameUtils,
+  MACUtils;
 
 {$R *.dfm}
 
 procedure TdmMain.actLoadMachinesExecute(Sender: TObject);
-var
-  Machines : TMachines;
-  i : integer;
-  Item : TListItem;
 begin
   HourGlass;
   MachineManager.ConfigFile := 'defaulthosts.txt';
   MachineManager.ReadMachines;
-  Machines := MachineManager.Machines;
-
-  Item := frmMain.lvMachines.Items.Add();
-  Item.ImageIndex := -1;
-  while frmMain.lvMachines.Items.Count > 1 do
-    frmMain.lvMachines.Items.Delete(0);
-
-  for i := Low(Machines) to High(Machines) do
-  begin
-    with frmMain.lvMachines.Items.Insert(Item.Index) do
-    begin
-      ImageIndex := 0;
-      StateIndex := 0;
-      Caption := Machines[i].Name;
-      SubItems.Text := Machines[i].MAC + #13#10#13#10#13#10#13#10#13#10#13#10;
-      frmMain.lvMachines.Refresh;
-    end;
-  end;
-  frmMain.lvMachines.Items.Delete(Item.Index);
-
+  ViewMachines(MachineManager.Machines);
 end;
 
 procedure TdmMain.actStartMachineExecute(Sender: TObject);
@@ -132,17 +115,6 @@ begin
   GetComputerName(ComputerName, Size);
 
   PowerOffMachine(frmMain.lvMachines.Selected.Caption);
-
-end;
-
-procedure TdmMain.actSearchMachinesExecute(Sender: TObject);
-begin
-  with TfrmServers.Create(self) do
-  try
-    ShowModal;
-  finally
-    Free;
-  end;
 
 end;
 
@@ -209,6 +181,73 @@ procedure TdmMain.MainFormCreate(Sender: TObject);
 begin
   frmMain.lvMachines.OnSelectItem := MachinesSelectItem;
   actLoadMachines.Execute;
+end;
+
+procedure TdmMain.ViewMachines(const Machines: TMachines);
+var
+  i : integer;
+  Item : TListItem;
+begin
+  HourGlass;
+
+  Item := frmMain.lvMachines.Items.Add();
+  Item.ImageIndex := -1;
+  while frmMain.lvMachines.Items.Count > 1 do
+    frmMain.lvMachines.Items.Delete(0);
+
+  for i := Low(Machines) to High(Machines) do
+  begin
+    with frmMain.lvMachines.Items.Insert(Item.Index) do
+    begin
+      ImageIndex := 0;
+      StateIndex := 0;
+      Caption := Machines[i].Name;
+      SubItems.Text := Machines[i].MAC + #13#10#13#10#13#10#13#10#13#10#13#10;
+      SubItems[1] := Machines[i].Comment;
+      frmMain.lvMachines.Refresh;
+    end;
+  end;
+  frmMain.lvMachines.Items.Delete(Item.Index);
+end;
+
+
+
+procedure TdmMain.actSearchMachinesExecute(Sender: TObject);
+var
+  WN : TNetEnumerator;
+begin
+
+  Screen.Cursor := crHourGlass;
+  WN := TNetEnumerator.Create;
+  try
+
+    WN.OnContainer := nil;
+    WN.OnServer := DoServer;
+    WN.OnProgress := nil;
+    WN.Enumerate;
+    ViewMachines(MachineManager.Machines);
+
+  finally
+    Screen.Cursor := crDefault;
+    WN.Free;
+  end;
+
+end;
+
+procedure TdmMain.DoServer(const Name, Comment: string);
+var
+  IPAddress, MACAddress, WSAErr : string;
+begin
+
+  if (GetIPFromHost(Name, IPAddress, WSAErr)) then
+    MACAddress := GetRemoteMacAddress(IPAddress);
+   MachineManager.AddMachine(Name, MACAddress, Comment);
+
+end;
+
+procedure TdmMain.actSaveMachinesExecute(Sender: TObject);
+begin
+    MachineManager.WriteMachines;
 end;
 
 end.

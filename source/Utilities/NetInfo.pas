@@ -123,14 +123,9 @@ begin
    begin
      ResourcesEnumerated := 0;
      ResourcesToEnumerate := 1;
-     { TODO 2 -opatrick -cWNet : fire event for this }
-     // AddMessage(sStartEnumerateNetwork,  1);
    end;
 
    DoProgress(ResourcesEnumerated, ResourcesToEnumerate);
-
-     { TODO 2 -opatrick -cWNet : fire event for this }
-   // pbServers.Position := round(pbServers.Max *  ( ResourcesEnumerated /  ResourcesToEnumerate));
 
    Inc(ResourcesEnumerated);
 
@@ -197,10 +192,7 @@ begin
 
     if (ErrorCode <> ERROR_EXTENDED_ERROR) then
     begin
-      { TODO 2 -opatrick -cWNet : fire event for this }
-      // AddMessage(Func + sFailed, 2);
       MessageStr := SysErrorMessage(ErrorCode) + '.';
-      //MessageSeverity := 0;
     end
     else
     begin
@@ -213,7 +205,6 @@ begin
           MessageStr := Format(sWNetGetLastErrorFailedFmt, [WNetResult]);
         end;
 
-      //MessageSeverity := 3;
       MessageStr := Format(sWNetFailedFmt, [Provider, LastError, Description]);
     end;
 
@@ -225,15 +216,14 @@ begin
     Index := Pos(MessageStr, #13#10);
   end;
 
-       { TODO 2 -opatrick -cWNet : fire event for this }
-    // AddMessage(MessageStr, MessageSeverity);
+
+  { TODO : implement this }
+  // AddMessage(MessageStr, MessageSeverity);
 
 end;
 
 procedure TNetEnumerator.Enumerate;
 var
-  ComputerName : array[0..MAX_COMPUTERNAME_LENGTH] of Char;
-  dwSize : DWORD;
   ResourcesEnumerated, ResourcesToEnumerate : Cardinal;
 begin
 
@@ -241,11 +231,7 @@ begin
   ResourcesToEnumerate := 0;
 
   NetEnumerate(nil, ResourcesEnumerated, ResourcesToEnumerate);
-
-  { TODO 2 -opatrick -cWNet : add in the local machine here if not found }
-  dwSize := MAX_COMPUTERNAME_LENGTH;
-  GetComputerName(ComputerName, dwSize);
-
+  
 end;
 
 
@@ -267,7 +253,7 @@ procedure TNetEnumerator.DoServer(const NetResource: TNetResource);
 var
  ServerName : string;
 begin
-  if Assigned(FonContainer) then
+  if Assigned(FonServer) then
   begin
     ServerName := NetResource.lpRemoteName;
 

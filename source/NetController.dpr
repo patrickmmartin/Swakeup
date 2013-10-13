@@ -2,7 +2,6 @@ program NetController;
 
 uses
   Forms,
-  ServersF in 'Forms\ServersF.pas' {frmServers},
   NetInfo in 'Utilities\NetInfo.pas',
   XPMenu in 'Forms\XPMenu.pas',
   MainF in 'Forms\MainF.pas' {frmMain},

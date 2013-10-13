@@ -40,6 +40,7 @@ type
     ToolButton7: TToolButton;
     ToolButton8: TToolButton;
     pmnuScanMachine: TMenuItem;
+    ToolButton9: TToolButton;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
