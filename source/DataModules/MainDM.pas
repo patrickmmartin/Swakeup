@@ -80,13 +80,15 @@ end;
 
 procedure TdmMain.actStartMachineExecute(Sender: TObject);
 begin
+  { TODO : 
+this could perhaps be more ideally the subnet broadcast address ? 
+ - really depends on what's in the ini file }
   SendMagicPacket(frmMain.lvMachines.Selected.SubItems[0], '255.255.255.255', 9);
 end;
 
 procedure TdmMain.MenuMachinesSetup(Sender: TObject);
 begin
-
-
+  { TODO : was there supposed to be something in here? }
 end;
 
 procedure TdmMain.MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);

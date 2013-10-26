@@ -8,3 +8,6 @@
 /bin
 *.~ddp
  *.~dpr
+/source/NetController.~dpr
+/source/SWakeup.~bpg
+/source/wakeup.~dpr

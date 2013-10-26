@@ -3,20 +3,27 @@ unit LanWake;
 interface
 
 uses
-  Windows,  { DWORD }
   WinSock   { WinSock methods }
   ;
 
 function CheckMAC(const MacAddress: string): Boolean;
 function CheckIP(const IpAddress: string): Boolean;
 function CheckPort(const Port: string): Boolean;
+
+const
+  PHYSADDR_LEN = 6;
+type
+  TMacAddress = array[0..PHYSADDR_LEN - 1] of Byte;
+
 procedure SendMagicPacket(const MacAddress, IpAddress: string; Port: Word);
 
 implementation
 
 uses
+  Windows,  { DWORD }
   SysUtils  { StrToInt }
   ;
+
 
 function CheckMAC(const MacAddress: string): Boolean;
 var
@@ -81,10 +88,14 @@ begin
   except
     Result := False;
   end;
-end;
+end;  
 
-procedure SendMagicPacket(const MacAddress, IpAddress: string; Port: Word);
+const
+  MAGICPACKET_LEN = 102;
 
+procedure SendMagicPacketRaw(const MacAddr : TMacAddress;
+                             const IP : integer;
+                             const Port : Word);
   procedure CheckWinSockResult(ResultCode: Integer; const FuncName: string);
   var
     ErrorCode: Integer;
@@ -97,9 +108,6 @@ procedure SendMagicPacket(const MacAddress, IpAddress: string; Port: Word);
     end;
   end;
 
-const
-  MAGICPACKET_LEN = 102;
-  PHYSADDR_LEN = 6;
 var
   WSAData: TWSAData;
   Sock: TSocket;
@@ -108,7 +116,6 @@ var
   RetVal: Integer;
   Position: DWORD;
   MagicData: array[0..MAGICPACKET_LEN - 1] of Byte;
-  MacAddr: array[0..PHYSADDR_LEN - 1] of Byte;
 begin
   CheckWinSockResult(WSAStartup($0101, WSAData), 'WSAStartup');
   try
@@ -117,19 +124,13 @@ begin
       CheckWinSockResult(Sock, 'socket');
     Addr.sin_family := AF_INET;
     Addr.sin_port := htons(Port);
-    Addr.sin_addr.S_addr := inet_addr(PChar(IpAddress));
+    Addr.sin_addr.S_addr := IP;
     if Addr.sin_addr.S_addr = INADDR_BROADCAST then
     begin
       OptVal := True;
       CheckWinSockResult(setsockopt(Sock, SOL_SOCKET, SO_BROADCAST,
                          PChar(@OptVal), SizeOf(OptVal)), 'setsockopt');
     end;
-    MacAddr[0] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 1, 2));
-    MacAddr[1] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 4, 2));
-    MacAddr[2] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 7, 2));
-    MacAddr[3] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 10, 2));
-    MacAddr[4] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 13, 2));
-    MacAddr[5] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 16, 2));
     FillChar(MagicData, SizeOf(MagicData), $FF);
     Position := PHYSADDR_LEN;
     while Position < SizeOf(MagicData) do
@@ -145,5 +146,25 @@ begin
     CheckWinSockResult(WSACleanup, 'WSACleanup');
   end;
 end;
+
+
+procedure SendMagicPacket(const MacAddress, IpAddress: string; Port: Word);
+var
+  MacAddr : TMacAddress;
+begin
+
+  { TODO : perhaps there could some validation before passing on from this function... }
+
+  MacAddr[0] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 1, 2));
+  MacAddr[1] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 4, 2));
+  MacAddr[2] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 7, 2));
+  MacAddr[3] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 10, 2));
+  MacAddr[4] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 13, 2));
+  MacAddr[5] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 16, 2));
+
+  SendMagicPacketRaw(MacAddr, inet_addr(PChar(IpAddress)), Port);
+
+end;
+
 
 end.
