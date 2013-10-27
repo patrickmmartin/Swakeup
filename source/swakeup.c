@@ -10,6 +10,7 @@
 #ifdef WIN32
 #include "winsock.h"
 #else
+#include "unistd.h"
 #include "string.h"
 #include "errno.h"
 #include "sys/socket.h"
