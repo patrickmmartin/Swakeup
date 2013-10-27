@@ -142,7 +142,7 @@ int sw_startup() {
 	WSADATA wsaData;
 	retval = WSAStartup(MAKEWORD(1, 1), &wsaData);
 	if (retval)
-		print_sock_result(retval, "WSAStartup");
+		sw_print_sock_result(retval, "WSAStartup");
 #endif
 	return retval;
 }

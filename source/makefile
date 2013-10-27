@@ -40,13 +40,13 @@ swakeup.posix: ../obj ../bin
 	gcc -o ../bin/swakeup ../obj/swakeup.o  
 
 # builds the GUI tool
-NetController.exe: NetController.dpr ..\dcu ..\bin
+NetController.exe: NetController.dpr 
 	@echo [build $@]
 	$(DCC)
 
 
 # builds the CLI tool
-Wakeup.exe: Wakeup.dpr ..\dcu ..\bin
+Wakeup.exe: Wakeup.dpr 
 	@echo [build $@]
 	$(DCC)
 
