@@ -15,17 +15,25 @@ default: ..\dcu ..\bin $(PROJECTS)
 ..\bin:
 	@if not exist ..\bin mkdir ..\bin
 
+..\obj:
+	@if not exist ..\obj mkdir ..\obj
+
+../obj:
+	@mkdir -p ../obj
+
 
 
 # builds the win32 target
-swakeup.mingw:
-	gcc -O0 -g3 -Wall -c -fmessage-length=0 -o swakeup.o swakeup.c
-	gcc -o ..\bin\swakeup.exe swakeup.o -lws2_32 
+swakeup.mingw: ..\obj
+	@echo [build $@]
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -o ..\obj\swakeup.o swakeup.c
+	gcc -o ..\bin\swakeup.exe ..\obj\swakeup.o -lws2_32 
 
 # builds the posix style target
-swakeup.posix:
-	gcc -O0 -g3 -Wall -c -fmessage-length=0 -o swakeup.o swakeup.c
-	gcc -o swakeup swakeup.o  
+swakeup.posix: ../obj
+	@echo [build $@]
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -o ../obj/swakeup.o swakeup.c
+	gcc -o ../bin/swakeup ../obj/swakeup.o  
 	
 # builds the GUI tool
 NetController.exe: NetController.dpr

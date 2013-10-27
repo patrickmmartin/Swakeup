@@ -5,6 +5,7 @@
 
 /dcu/*.dcu
 /dcu
+/obj/*
 /bin
 *.~ddp
  *.~dpr
