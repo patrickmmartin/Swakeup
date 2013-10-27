@@ -61,7 +61,7 @@ int main(int argc, char * argv[]) {
 
 	sw_print_sock_result(sw_startup(), "startup");
 
-	char MACAddr[] = { 0x00, 0x1D, 0x73, 0x4C, 0x99, 0x2E };
+	char MACAddr[6];
 
 	/* TODO: parse out the MAC address */
 	MACAddr[0] = 0x00;

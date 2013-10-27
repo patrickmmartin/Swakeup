@@ -80,3 +80,8 @@ docs: ..\doc
 
 # builds the Windows suite of binaries
 default: NetController.exe Wakeup.exe swakeup.mingw
+
+
+#lints the c file
+lint:
+	splint +posixlib -I /usr/include/x86_64-linux-gnu swakeup.c
