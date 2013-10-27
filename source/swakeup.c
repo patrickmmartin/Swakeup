@@ -18,7 +18,9 @@
 // TODO need the platform definitions for these
 #define SOCKET_ERROR -1
 typedef int SOCKET;
-#endif // WIN32
+#define closesocket(s) close(s)
+#endif // WIN32
+
 /**
  * @brief any platform startup actions here
  */
@@ -64,7 +66,6 @@ int main(int argc, char * argv[]) {
 	int port = 9;
 
 	SOCKET Sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);
-	Sock = 0;
 	if (!Sock) {
 		int err;
 #ifdef WIN32
@@ -72,7 +73,6 @@ int main(int argc, char * argv[]) {
 #else
 		err = errno;
 #endif
-		err = 2;
 		print_sock_result(err, "socket");
 	}
 
