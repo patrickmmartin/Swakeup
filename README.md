@@ -2,12 +2,12 @@ Swakeup
 =======
 
 
-A "Computer Wrangler" application for mainly Windows boxes I wrote a long time ago.
+A "Computer Wrangler" application suite for mainly Windows boxes I wrote a long time ago.
 
 ## Approach
 
 ## Technology
 
-Delphi 7
+Delphi 7, C
 
 
