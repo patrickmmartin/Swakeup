@@ -57,14 +57,14 @@ int sw_error();
 const int PHYSADDR_LEN = 6;
 const int MAGICPACKET_LEN = 102;
 
+#define usagestr  "%s\n" \
+				  "usage\n" \
+				  "%s macaddress\n" \
+				  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n" \
+				  "sends a WOL packet to the local broadcast address on port 9"
 
 void usage(int argc, char * argv[], char * reason)
 {
-	char * usagestr = "%s\n"
-					  "usage\n"
-					  "%s macaddress\n"
-					  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n"
-					  "sends a WOL packet to the local broadcast address on port 9";
 					  
 	printf(usagestr, reason, argv[0]);
 }
