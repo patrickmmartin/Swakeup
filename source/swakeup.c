@@ -97,13 +97,13 @@ int main(int argc, char * argv[]) {
 
 	if (token)
 	{
-		MACAddr[i] = strtol(token, NULL, 16);
+		MACAddr[i] = (unsigned char) strtol(token, NULL, 16);
 		i++;
 
 		while (	(token = strtok(NULL, search) ) )
 		{
 			if ( i < PHYSADDR_LEN)
-				MACAddr[i] = strtol(token, NULL, 16);
+				MACAddr[i] = (unsigned char) strtol(token, NULL, 16);
 			i++;
 		}
 	}
