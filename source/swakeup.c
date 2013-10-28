@@ -12,6 +12,7 @@
   #include "winsock.h"
 #else
   #include "unistd.h"
+  #include "stdlib.h"
   #include "string.h"
   #include "errno.h"
   #include "sys/socket.h"
@@ -57,20 +58,24 @@ const int PHYSADDR_LEN = 6;
 const int MAGICPACKET_LEN = 102;
 
 
-int main(int argc, char * argv[]) {
+void usage(int argc, char * argv[])
+{
+	char * usagestr = "usage\n"
+					  "%s macaddress\n"
+					  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n"
+					  "sends a WOL packet to the local broadcast address on port 9";
+					  
+	printf(usagestr, argv[0]);
+}
 
-	sw_print_sock_result(sw_startup(), "startup");
+int main(int argc, char * argv[]) {
 
 	char MACAddr[6];
 
-	/* TODO: parse out the MAC address */
-	MACAddr[0] = 0x00;
-	MACAddr[1] = 0x1D;
-	MACAddr[2] = 0x73;
-	MACAddr[3] = 0x4C;
-	MACAddr[4] = 0x99;
-	MACAddr[5] = 0x2E;
-
+	char *token;
+	char *search = ":-";
+	int i;
+	
 	struct sockaddr_in addr;
 	int sooptval;
 	int retval;
@@ -78,6 +83,28 @@ int main(int argc, char * argv[]) {
 	char magicdata[MAGICPACKET_LEN];
 	int destination_ip = 0xffffffff; /* broadcast to all */
 	int port = 9;
+	
+	
+	if (argc != 2)
+	{
+		usage(argc, argv);
+		return -1;
+	}
+	
+	i = 0;
+	token = strtok(argv[1], search);
+
+	MACAddr[i] = strtol(token, NULL, 16);
+
+	while (	(token = strtok(NULL, search) ) && ( i < PHYSADDR_LEN) )
+	{
+		MACAddr[i] = strtol(token, NULL, 16);
+	}
+	
+	if (i >= PHYSADDR_LEN)
+		usage(argc, argv);
+
+	sw_print_sock_result(sw_startup(), "startup");
 
 	SOCKET sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);
 	if (!sock) {
