@@ -2,7 +2,7 @@
 ROOT = $(MAKEDIR)\..
 #endif
 MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
-DCC = $(ROOT)\bin\dcc32.exe -Q $**
+DCC = $(ROOT)\bin\dcc32.exe -Q $*
 BRCC = $(ROOT)\bin\brcc32.exe $**
 
 
