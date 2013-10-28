@@ -58,19 +58,20 @@ const int PHYSADDR_LEN = 6;
 const int MAGICPACKET_LEN = 102;
 
 
-void usage(int argc, char * argv[])
+void usage(int argc, char * argv[], char * reason)
 {
-	char * usagestr = "usage\n"
+	char * usagestr = "%s\n"
+					  "usage\n"
 					  "%s macaddress\n"
 					  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n"
 					  "sends a WOL packet to the local broadcast address on port 9";
 					  
-	printf(usagestr, argv[0]);
+	printf(usagestr, reason, argv[0]);
 }
 
 int main(int argc, char * argv[]) {
 
-	char MACAddr[6];
+	unsigned char MACAddr[6];
 
 	char *token;
 	char *search = ":-";
@@ -87,7 +88,7 @@ int main(int argc, char * argv[]) {
 	
 	if (argc != 2)
 	{
-		usage(argc, argv);
+		usage(argc, argv, "invalid argument count");
 		return -1;
 	}
 	
@@ -95,15 +96,21 @@ int main(int argc, char * argv[]) {
 	token = strtok(argv[1], search);
 
 	MACAddr[i] = strtol(token, NULL, 16);
+	i++;
 
-	while (	(token = strtok(NULL, search) ) && ( i < PHYSADDR_LEN) )
+	while (	(token = strtok(NULL, search) ) )
 	{
-		MACAddr[i] = strtol(token, NULL, 16);
+		if ( i < PHYSADDR_LEN)
+			MACAddr[i] = strtol(token, NULL, 16);
+		i++;
 	}
 	
-	if (i >= PHYSADDR_LEN)
-		usage(argc, argv);
-
+	if (i != PHYSADDR_LEN)
+	{
+		usage(argc, argv, "invalid MAC address");
+		return -1;
+	}
+	
 	sw_print_sock_result(sw_startup(), "startup");
 
 	SOCKET sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);
