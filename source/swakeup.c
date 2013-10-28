@@ -84,7 +84,7 @@ int main(int argc, char * argv[]) {
 	char magicdata[MAGICPACKET_LEN];
 	int destination_ip = 0xffffffff; /* broadcast to all */
 	int port = 9;
-	
+	SOCKET sock;
 	
 	if (argc != 2)
 	{
@@ -116,8 +116,8 @@ int main(int argc, char * argv[]) {
 	
 	sw_print_sock_result(sw_startup(), "startup");
 
-	SOCKET sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);
-	if (!sock) {
+	sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);
+	if (sock == 0) {
                 sw_print_sock_result(sw_error(), "socket");
 	}
 
