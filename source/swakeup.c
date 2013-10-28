@@ -148,7 +148,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	/* TODO - i don't like the cast to make the warning go away */
-	retval = sendto(0, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, sizeof(addr));
+	retval = sendto(sock, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, sizeof(addr));
 	if (retval == SOCKET_ERROR)
 		sw_print_sock_result(SOCKET_ERROR, "sendto");
 	sw_print_sock_result(closesocket(sock), "closesocket");
