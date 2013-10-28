@@ -63,10 +63,10 @@ const int MAGICPACKET_LEN = 102;
 				  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n" \
 				  "sends a WOL packet to the local broadcast address on port 9"
 
-void usage(int argc, char * argv[], char * reason)
+void usage(char * arg0, char * reason)
 {
 					  
-	printf(usagestr, reason, argv[0]);
+	printf(usagestr, reason, arg0);
 }
 
 int main(int argc, char * argv[]) {
@@ -88,26 +88,29 @@ int main(int argc, char * argv[]) {
 	
 	if (argc != 2)
 	{
-		usage(argc, argv, "invalid argument count");
+		usage(argv[0], "invalid argument count");
 		return -1;
 	}
 	
 	i = 0;
 	token = strtok(argv[1], search);
 
-	MACAddr[i] = strtol(token, NULL, 16);
-	i++;
-
-	while (	(token = strtok(NULL, search) ) )
+	if (token)
 	{
-		if ( i < PHYSADDR_LEN)
-			MACAddr[i] = strtol(token, NULL, 16);
+		MACAddr[i] = strtol(token, NULL, 16);
 		i++;
+
+		while (	(token = strtok(NULL, search) ) )
+		{
+			if ( i < PHYSADDR_LEN)
+				MACAddr[i] = strtol(token, NULL, 16);
+			i++;
+		}
 	}
 	
 	if (i != PHYSADDR_LEN)
 	{
-		usage(argc, argv, "invalid MAC address");
+		usage(argv[0], "invalid MAC address");
 		return -1;
 	}
 	
