@@ -84,4 +84,4 @@ default: NetController.exe Wakeup.exe swakeup.mingw
 
 #lints the c file
 lint:
-	splint +posixlib +gnuextensions -I /usr/include/x86_64-linux-gnu swakeup.c
+	splint +posixlib -I /usr/include/x86_64-linux-gnu swakeup.c
