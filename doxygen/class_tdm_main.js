@@ -1,0 +1,27 @@
+var class_tdm_main =
+[
+    [ "actLoadMachinesExecute", "class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d", null ],
+    [ "actSaveMachinesExecute", "class_tdm_main.html#a3d00b6ec74c7649df1e26f396b99442d", null ],
+    [ "actScanMachineExecute", "class_tdm_main.html#acab623c26061db8f4835de8fd3490c98", null ],
+    [ "actScanMachinesExecute", "class_tdm_main.html#a55ed7ff64773736d67ab2d632366e3ae", null ],
+    [ "actSearchMachinesExecute", "class_tdm_main.html#a0447e7481c0ab0325074dc3eb2d99bc2", null ],
+    [ "actShutdownMachineExecute", "class_tdm_main.html#ae189f03a61bdf6efddaadab4fa27c0c7", null ],
+    [ "actStartMachineExecute", "class_tdm_main.html#af944a16463229c8229284ae9febd4c78", null ],
+    [ "aeMainHint", "class_tdm_main.html#ab65025ee585138acb8d6bb5629e52a7d", null ],
+    [ "MachinesSelectItem", "class_tdm_main.html#a8c8327a34455f42d506b261c5f0c4058", null ],
+    [ "MainFormCreate", "class_tdm_main.html#aed2858b5c2a9004c98a0c4803cb4379c", null ],
+    [ "MenuMachinesSetup", "class_tdm_main.html#ae0c32bdc99c999d54376f8d2b5e2ef31", null ],
+    [ "actAddMachine", "class_tdm_main.html#a94f3e823fb245e7f8efe6f4daa2f9909", null ],
+    [ "actDeleteMachine", "class_tdm_main.html#a530a9d58aacf5150d91dcf87bb36cfea", null ],
+    [ "actFileExit", "class_tdm_main.html#a18f980554b3e8364a98526771035111d", null ],
+    [ "actHelpAbout", "class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d", null ],
+    [ "actLoadMachines", "class_tdm_main.html#a16c9c509d8545fc3a941ec6d416da740", null ],
+    [ "actSaveMachines", "class_tdm_main.html#ad40abedabbeef142cdbc1749da386efc", null ],
+    [ "actScanMachine", "class_tdm_main.html#ac32f4cb172af85ac7022f243ce73b09d", null ],
+    [ "actScanMachines", "class_tdm_main.html#a02f6ac1d3c53e1faaa61dd253a713be6", null ],
+    [ "actSearchMachines", "class_tdm_main.html#a82599db763c35caacf80af69b3a2a537", null ],
+    [ "actShutdownMachine", "class_tdm_main.html#a14645982d7e985f4b505661ac327e5de", null ],
+    [ "actStartMachine", "class_tdm_main.html#a12a76aa41da93de314d81bd9e5bbb1ef", null ],
+    [ "aeMain", "class_tdm_main.html#a54e01d40cca67dc7adb9de46e5db1eaa", null ],
+    [ "alMain", "class_tdm_main.html#a985f9c9d3d00abc839364d7bd242ae9c", null ]
+];

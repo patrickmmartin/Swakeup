@@ -1,0 +1,36 @@
+var _w_m_i_utils_8pas =
+[
+    [ "TWbemPrivilegeEnums", "_w_m_i_utils_8pas.html#af6009c4d91846aa4c633c3e50c220680", null ],
+    [ "TWbemPrivilegeEnum", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7", [
+      [ "wbemPrivilegeCreateToken", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ad29507c2ea23a7124dbd2222159c760e", null ],
+      [ "wbemPrivilegePrimaryToken", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a62e5683467b7cc9664aa1a20d37c6aaa", null ],
+      [ "wbemPrivilegeLockMemory", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a93ae15e3c625d1b9607b1696309e68bf", null ],
+      [ "wbemPrivilegeIncreaseQuota", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a79dace9aed7d0320cd3f408028b9baf3", null ],
+      [ "wbemPrivilegeMachineAccount", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a7c3e8d93ac6f227f425d2dc8f1b0dcff", null ],
+      [ "wbemPrivilegeTcb", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7abf8e0d514b18d76ac1ca2441db2b2f2f", null ],
+      [ "wbemPrivilegeSecurity", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a32a0b540c8552df4d85c94e548e6294f", null ],
+      [ "wbemPrivilegeTakeOwnership", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a48dc1cf1bb6d3c64c586043966aa7676", null ],
+      [ "wbemPrivilegeLoadDriver", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ab9f1e734be1ac9a3dd7a4412eb8157a5", null ],
+      [ "wbemPrivilegeSystemProfile", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ae266d2eb1bf4adbecd4097f1654e716b", null ],
+      [ "wbemPrivilegeSystemtime", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7add7b37e6c77837b137b5012da26bfbee", null ],
+      [ "wbemPrivilegeProfileSingleProcess", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ae1421aa3d7421976bb3923386bdfa723", null ],
+      [ "wbemPrivilegeIncreaseBasePriority", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ab35f362e1e240cc297dde1af38fde7c5", null ],
+      [ "wbemPrivilegeCreatePagefile", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a96da030fff343481ebd0ebfbb5f39b18", null ],
+      [ "wbemPrivilegeCreatePermanent", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a79e34f0dec36204779415c58d5961fc5", null ],
+      [ "wbemPrivilegeBackup", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ab063e3d1d6b764e7e02fef165504009f", null ],
+      [ "wbemPrivilegeRestore", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a3b588c020fced3f807f2810971aa9775", null ],
+      [ "wbemPrivilegeShutdown", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a48bfa2a69019e3bf808f5fa467288b92", null ],
+      [ "wbemPrivilegeDebug", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a80228d8fb1e457cf01cdc4b6d157bf68", null ],
+      [ "wbemPrivilegeAudit", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ac580027ed421e4272ee0f1d30439d02c", null ],
+      [ "wbemPrivilegeSystemEnvironment", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7aae85edee1828c80245d6dbedbcc5670e", null ],
+      [ "wbemPrivilegeChangeNotify", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a96529bb9f0d7fac962a5f1d5599194d6", null ],
+      [ "wbemPrivilegeRemoteShutdown", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7acb254fdef30ac7408533775e74b38161", null ],
+      [ "wbemPrivilegeUndock", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a4db7feaa74abdf2204a60d404e0023d2", null ],
+      [ "wbemPrivilegeSyncAgent", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a2196369cf551f9a8c2d10342976b081d", null ],
+      [ "wbemPrivilegeEnableDelegation", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a6667d8cfbf1d80719dc10c2fd15e1ff3", null ],
+      [ "wbemPrivilegeManageVolume", "_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a491ba4cac0a7fc7d1a08c4e45345b4bb", null ]
+    ] ],
+    [ "GetMachineOS", "_w_m_i_utils_8pas.html#a3607ece456c5dbb2f41311f36079b27c", null ],
+    [ "GetWMIInstance", "_w_m_i_utils_8pas.html#aaa8003eafa80d5d5d1b9436f19369856", null ],
+    [ "PowerOffMachine", "_w_m_i_utils_8pas.html#a7fc6008d040133b35c4518af87fe4a1f", null ]
+];

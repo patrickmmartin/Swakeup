@@ -165,6 +165,24 @@ a.button span {
   margin-right: 0;
 }
 
+
+#doxygen_link {
+  display: block;
+  width: 140px;
+  height:31px;
+  float: left;  
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../images/doxygen.png) no-repeat top left;
+  margin-left: 0x;
+  margin-top:  10px;
+}
+
+#doxygen_link:hover{
+  background: url(../images/doxygen.png) no-repeat bottom left;
+}
+
+
 code, pre {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
   color: #222;
