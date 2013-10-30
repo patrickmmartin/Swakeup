@@ -1,12 +1,9 @@
 *.~dfm
 *.~pas
-
-/bin/NetController.exe
-
-/dcu/*.dcu
 /dcu
-/obj/*
+/obj
 /bin
+/doc
 *.~ddp
  *.~dpr
 /source/NetController.~dpr
