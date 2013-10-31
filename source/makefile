@@ -9,12 +9,10 @@ BRCC = $(ROOT)\bin\brcc32.exe
 # this is an override of the default implicit rule for  ".dpr.exe" 
 # to override the default .dpr.exe rule
 .dpr.exe: 
-	@echo ========== build for $& ======
-	@echo building $&.rcscript
+	@echo [build $@]
 	@buildkeys $@
 	$(BRCC) $&.rcscript
-	@echo building $&.dpr
-	$(ROOT)\bin\dcc32.exe $&.dpr
+	$(DCC) 
 
 
 
@@ -54,10 +52,10 @@ swakeup.posix: ../obj ../bin
 	gcc -o ../bin/swakeup ../obj/swakeup.o  
 
 # builds the GUI tool
-NetController.exe:  
+NetController.exe: ..\dcu ..\bin
 
 # builds the CLI tool
-Wakeup.exe: 
+Wakeup.exe:  ..\dcu ..\bin
 
 
 # deletes the GUI binary
