@@ -2,6 +2,8 @@ program wakeup;
 
 {$APPTYPE CONSOLE}
 
+{$R *.res}
+
 uses
   SysUtils,
   LanWake in 'Utilities\LanWake.pas';

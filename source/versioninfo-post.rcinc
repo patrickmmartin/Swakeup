@@ -1,0 +1,8 @@
+         END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+         VALUE "Translation", 0x0809, 1252
+    END
+END
+

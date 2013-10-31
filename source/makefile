@@ -3,7 +3,19 @@ ROOT = $(MAKEDIR)\..
 #endif
 MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
 DCC = $(ROOT)\bin\dcc32.exe -Q $*
-BRCC = $(ROOT)\bin\brcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe 
+
+
+# this is an override of the default implicit rule for  ".dpr.exe" 
+# to override the default .dpr.exe rule
+.dpr.exe: 
+	@echo ========== build for $& ======
+	@echo building $&.rcscript
+	@buildkeys $@
+	$(BRCC) $&.rcscript
+	@echo building $&.dpr
+	$(ROOT)\bin\dcc32.exe $&.dpr
+
 
 
 default: ..\dcu ..\bin $(PROJECTS) 
@@ -40,15 +52,10 @@ swakeup.posix: ../obj ../bin
 	gcc -o ../bin/swakeup ../obj/swakeup.o  
 
 # builds the GUI tool
-NetController.exe: NetController.dpr 
-	@echo [build $@]
-	$(DCC)
-
+NetController.exe:  
 
 # builds the CLI tool
-Wakeup.exe: Wakeup.dpr 
-	@echo [build $@]
-	$(DCC)
+Wakeup.exe: 
 
 
 # deletes the GUI binary
