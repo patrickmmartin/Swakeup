@@ -14,6 +14,8 @@ echo               VALUE "Build Machine", "%COMPUTERNAME%\0" >> buildkeys.rcinc
 
 :: build base script from the passed basename
 
+if ""=="%1" exit /b
+
  >%~n1.rcscript echo #include "versioninfo-pre.rcinc""
 >>%~n1.rcscript echo           VALUE "OriginalFilename", "%1\0"
 >>%~n1.rcscript echo           VALUE "InternalName", "%~n1\0"
