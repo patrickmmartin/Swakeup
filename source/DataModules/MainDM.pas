@@ -21,8 +21,6 @@ type
     aeMain: TApplicationEvents;
     actFileExit: TFileExit;
     actHelpAbout: TAction;
-    actAddMachine: TAction;
-    actDeleteMachine: TAction;
     actSearchMachines: TAction;
     actStartMachine: TAction;
     actShutdownMachine: TAction;

@@ -153,7 +153,7 @@ var
   MacAddr : TMacAddress;
 begin
 
-  { TODO : perhaps there could some validation before passing on from this function... }
+  { TODO : perhaps there could be some validation before passing on from this function... }
 
   MacAddr[0] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 1, 2));
   MacAddr[1] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 4, 2));

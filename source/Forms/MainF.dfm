@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = 211
-  Top = 240
+  Left = 461
+  Top = 190
   Width = 788
   Height = 464
   Caption = 'Net Controller'
@@ -78,60 +78,51 @@ object frmMain: TfrmMain
     Height = 29
     ButtonHeight = 23
     DisabledImages = dmResource.imlMainDisabled
+    Flat = True
     HotImages = dmResource.imlMainHot
     Images = dmResource.imlMain
     TabOrder = 2
-    object ToolButton8: TToolButton
+    object tbScaMachines: TToolButton
       Left = 0
-      Top = 2
+      Top = 0
       Action = dmMain.actScanMachine
     end
-    object ToolButton2: TToolButton
+    object tbStart: TToolButton
       Left = 23
-      Top = 2
+      Top = 0
       Action = dmMain.actStartMachine
     end
-    object ToolButton1: TToolButton
+    object tbStopMachine: TToolButton
       Left = 46
-      Top = 2
+      Top = 0
       Action = dmMain.actShutdownMachine
     end
     object sepPowerList: TToolButton
       Left = 69
-      Top = 2
+      Top = 0
       Width = 8
       Caption = 'sepPowerList'
       ImageIndex = 6
       Style = tbsSeparator
     end
-    object ToolButton5: TToolButton
+    object tbSearch: TToolButton
       Left = 77
-      Top = 2
-      Action = dmMain.actAddMachine
-    end
-    object ToolButton6: TToolButton
-      Left = 100
-      Top = 2
-      Action = dmMain.actDeleteMachine
-    end
-    object ToolButton4: TToolButton
-      Left = 123
-      Top = 2
+      Top = 0
       Action = dmMain.actSearchMachines
     end
-    object ToolButton3: TToolButton
-      Left = 146
-      Top = 2
+    object tbLoadMachines: TToolButton
+      Left = 100
+      Top = 0
       Action = dmMain.actLoadMachines
     end
-    object ToolButton7: TToolButton
-      Left = 169
-      Top = 2
+    object tbScanMachines: TToolButton
+      Left = 123
+      Top = 0
       Action = dmMain.actScanMachines
     end
-    object ToolButton9: TToolButton
-      Left = 192
-      Top = 2
+    object tbSaveMachines: TToolButton
+      Left = 146
+      Top = 0
       Action = dmMain.actSaveMachines
     end
   end
@@ -147,12 +138,6 @@ object frmMain: TfrmMain
     end
     object mnuList: TMenuItem
       Caption = 'List'
-      object mnuAddMachine: TMenuItem
-        Action = dmMain.actAddMachine
-      end
-      object mnuDeleteMachine: TMenuItem
-        Action = dmMain.actDeleteMachine
-      end
       object mnuSearchMachines: TMenuItem
         Action = dmMain.actSearchMachines
       end

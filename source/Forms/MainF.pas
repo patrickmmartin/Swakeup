@@ -18,8 +18,6 @@ type
     pmnuMachines: TPopupMenu;
     pmnuShutdownMachine: TMenuItem;
     mnuList: TMenuItem;
-    mnuAddMachine: TMenuItem;
-    mnuDeleteMachine: TMenuItem;
     mnuSearchMachines: TMenuItem;
     mnuMachine: TMenuItem;
     mnuStartMachine: TMenuItem;
@@ -28,19 +26,17 @@ type
     pmnuStartMachine: TMenuItem;
     sbMain: TStatusBar;
     ToolBar1: TToolBar;
-    ToolButton1: TToolButton;
-    ToolButton2: TToolButton;
-    ToolButton3: TToolButton;
-    ToolButton4: TToolButton;
-    ToolButton5: TToolButton;
-    ToolButton6: TToolButton;
+    tbStopMachine: TToolButton;
+    tbStart: TToolButton;
+    tbLoadMachines: TToolButton;
+    tbSearch: TToolButton;
     sepPowerList: TToolButton;
     mnuScanMachines: TMenuItem;
     mnuScanMachine: TMenuItem;
-    ToolButton7: TToolButton;
-    ToolButton8: TToolButton;
+    tbScanMachines: TToolButton;
+    tbScaMachines: TToolButton;
     pmnuScanMachine: TMenuItem;
-    ToolButton9: TToolButton;
+    tbSaveMachines: TToolButton;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

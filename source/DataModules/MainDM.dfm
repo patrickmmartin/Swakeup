@@ -1,7 +1,7 @@
 object dmMain: TdmMain
   OldCreateOrder = False
-  Left = 214
-  Top = 203
+  Left = 457
+  Top = 278
   Height = 244
   Width = 391
   object alMain: TActionList
@@ -19,18 +19,6 @@ object dmMain: TdmMain
       Caption = 'About'
       Hint = 'About this application.'
       ImageIndex = 13
-    end
-    object actAddMachine: TAction
-      Category = 'List'
-      Caption = 'Add Machine'
-      Hint = 'Add|Add a machine to the list.'
-      ImageIndex = 3
-    end
-    object actDeleteMachine: TAction
-      Category = 'List'
-      Caption = 'Delete Machine'
-      Hint = 'Delete|Delete a machine from th.e list'
-      ImageIndex = 6
     end
     object actSearchMachines: TAction
       Category = 'List'
@@ -80,6 +68,7 @@ object dmMain: TdmMain
     object actSaveMachines: TAction
       Category = 'List'
       Caption = 'actSaveMachines'
+      Hint = 'Save|Save Machine List to file'
       ImageIndex = 4
       OnExecute = actSaveMachinesExecute
     end
