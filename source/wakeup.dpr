@@ -65,8 +65,23 @@ begin
     Exit;
   end;
 
+  if (ParamStr(2) <> '') and not CheckPort(ParamStr(2)) then
+  begin
+    InvalidArgs('Port not in the valid port range');
+    ExitCode := -1;
+    Exit;
+  end;
+
   if (IPAddress = '') then
-    IPAddress := '255.255.255.255';
+    IPAddress := '255.255.255.255'
+  else
+  if not CheckIP(ParamStr(3)) then
+  begin
+    InvalidArgs('Invalid IP address');
+    ExitCode := -1;
+    Exit;
+  end;
+
 
   { TODO : this should return an error code, ideally }
   try

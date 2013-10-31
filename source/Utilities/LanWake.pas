@@ -21,58 +21,50 @@ implementation
 
 uses
   Windows,  { DWORD }
-  SysUtils  { StrToInt }
+  SysUtils,  { StrToInt }
+  Classes
   ;
 
 
 function CheckMAC(const MacAddress: string): Boolean;
 var
-  i: Integer;
-  P, Start: PChar;
-  s: string;
+  i : integer;
 begin
+  Result := False;
+  {i - fixed length}
+  if ( Length(MacAddress) <> Length('ab:cd:ef:ab:cd:ef') ) then
+    exit;
+  {ii - check for hex format in all elements }
+  for i := 0 to 5 do
+    if (-1 = (StrToIntDef(HexDisplayPrefix + Copy(MacAddress, i* 3 + 1, 2), -1))) then
+        Exit;
   Result := True;
-  try
-    P := PChar(MacAddress);
-    i := 0;
-    while P^ <> #0 do
-    begin
-      Start := P;
-      while not (P^ in [#0, #45]) do Inc(P);
-      SetString(s, Start, P - Start);
-      StrToInt(HexDisplayPrefix + s);
-      Inc(i);
-      if P^ <> #0 then Inc(P);
-    end;
-    if i <> 6 then Abort;
-  except
-    Result := False;
-  end;
 end;
 
 function CheckIP(const IpAddress: string): Boolean;
 var
-  i: Integer;
-  P, Start: PChar;
-  s: string;
+  SL: TStringList;
+  i : integer;
+  octet : integer;
 begin
-  Result := True;
+  Result := False;
+  SL := TStringList.Create;
   try
-    i := 0;
-    P := PChar(IpAddress);
-    while P^ <> #0 do
+    SL.Delimiter := '.';
+    SL.DelimitedText := IpAddress;
+    {i - must be 4 octets}
+    if (SL.Count <> 4) then
+      Exit;
+    {ii - must be a byte }
+    for i := 0 to 3 do
     begin
-      Start := P;
-      while not (P^ in [#0, #46]) do Inc(P);
-      SetString(s, Start, P - Start);
-      if not (StrToInt(s) in [0..255]) then Abort;
-      Inc(i);
-      Inc(P);
-      if P^ <> #0 then Inc(P);
-    end;
-    if i <> 4 then Abort;
-  except
-    Result := False;
+      octet := StrToIntDef(SL[i], -1);
+      if (octet < 0) or (octet > 255) then
+        Exit;
+     end;
+     Result := True;   
+  finally
+    SL.Free;
   end;
 end;
 
@@ -81,14 +73,10 @@ var
   nPort: Integer;
 begin
   Result := True;
-  try
-    nPort := StrToInt(Port);
-    if (nPort < Low(Word)) or (nPort > High(Word)) then
-      Abort;
-  except
+  nPort := StrToIntDef(Port, -1);
+  if (nPort < Low(Word)) or (nPort > High(Word)) then
     Result := False;
-  end;
-end;  
+end;
 
 const
   MAGICPACKET_LEN = 102;
