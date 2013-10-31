@@ -9,3 +9,9 @@
 /source/NetController.~dpr
 /source/SWakeup.~bpg
 /source/wakeup.~dpr
+NetController.RES
+NetController.rcscript
+Wakeup.RES
+Wakeup.rcscript
+build_ffi.rcinc
+buildkeys.rcinc
