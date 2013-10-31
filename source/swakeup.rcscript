@@ -1,0 +1,5 @@
+#include <windows.h>
+#include "versioninfo-pre.rcinc""
+          VALUE "OriginalFilename", "swakeup.exe\0"
+          VALUE "InternalName", "swakeup\0"
+#include "versioninfo-post.rcinc"

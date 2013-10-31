@@ -42,8 +42,9 @@ default: ..\dcu ..\bin $(PROJECTS)
 # builds the win32 target
 swakeup.mingw: ..\obj ..\bin
 	@echo [build $@]
+	windres -i swakeup.rcscript -o ..\obj\swakeuprc.o
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -o ..\obj\swakeup.o swakeup.c
-	gcc -o ..\bin\swakeup.exe ..\obj\swakeup.o -lws2_32 
+	gcc -o ..\bin\swakeup.exe ..\obj\swakeuprc.o ..\obj\swakeup.o -lws2_32 
 
 # builds the posix style target
 swakeup.posix: ../obj ../bin
