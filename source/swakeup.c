@@ -66,10 +66,17 @@ static const int MAGICPACKET_LEN = 102;
 				  "macaddress in format aa:bb:cc:dd:ee:ff or aa-bb-cc-dd-ee-ff\n" \
 				  "sends a WOL packet to the local broadcast address on port 9"
 
+
+const char PATH_SEP =
+#ifdef WIN32
+                            '\\';
+#else
+                            '/';
+#endif				  
 static void usage(char * arg0, char * reason)
 {
     // splint complained about basename and strdup
-	char * filename = strrchr(arg0, '/');
+	char * filename = strrchr(arg0, PATH_SEP);
 	if (!filename)
 		filename = arg0;
 	else
