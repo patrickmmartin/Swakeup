@@ -7,6 +7,7 @@
 
 #include "stdio.h"
 #include "libgen.h"
+
 // includes
 #ifdef WIN32
   #include "winsock.h"
@@ -67,11 +68,13 @@ static const int MAGICPACKET_LEN = 102;
 
 static void usage(char * arg0, char * reason)
 {
-    char * path = strdup(arg0);
-    // basename modifies the input
-    char * file = basename(path);
-	printf(usagestr, reason, file);
-    free(path);
+    // splint complained about basename and strdup
+	char * filename = strrchr(arg0, '/');
+	if (!filename)
+		filename = arg0;
+	else
+		filename++;
+	printf(usagestr, reason, filename);
 }
 
 int main(int argc, char * argv[]) {
