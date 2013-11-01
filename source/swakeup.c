@@ -73,14 +73,14 @@ const char PATH_SEP =
 #else
                             '/';
 #endif				  
+
 static void usage(char * arg0, char * reason)
 {
     // splint complained about basename and strdup
-	char * filename = strrchr(arg0, PATH_SEP);
-	if (!filename)
-		filename = arg0;
-	else
-		filename++;
+	char * filename = arg0;
+	char * filesep = strrchr(filename, PATH_SEP);
+	if (filesep)
+		filename = filesep++;
 	printf(usagestr, reason, filename);
 }
 
@@ -150,7 +150,7 @@ int main(int argc, char * argv[]) {
 	if (addr.sin_addr.s_addr == INADDR_BROADCAST) {
 		sooptval = 1;
 		sw_print_sock_result(setsockopt(sock, SOL_SOCKET, SO_BROADCAST,
-						  (void *) &sooptval, sizeof(sooptval)), "setsockopt");
+						  (void *) &sooptval, (socklen_t) sizeof(sooptval)), "setsockopt");
 	}
 
 	memset(magicdata, 0xFF, sizeof(magicdata));
@@ -161,7 +161,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	/* TODO - i don't like the cast to make the warning go away */
-	retval = sendto(sock, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, sizeof(addr));
+	retval = sendto(sock, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, (socklen_t) sizeof(addr));
 	if (retval == SOCKET_ERROR)
 		sw_print_sock_result(SOCKET_ERROR, "sendto");
 	sw_print_sock_result(closesocket(sock), "closesocket");
