@@ -37,6 +37,9 @@ default: ..\dcu ..\bin $(PROJECTS)
 ../bin:
 	@mkdir -p ../bin
 
+
+swakeupicon.res: swakeupicon.rc
+
 # builds the win32 target
 swakeup.mingw: ..\obj ..\bin
 	@echo [build $@]
@@ -53,10 +56,10 @@ swakeup.posix: ../obj ../bin
 	gcc -o ../bin/swakeup ../obj/swakeup.o  
 
 # builds the GUI tool
-NetController.exe: ..\dcu ..\bin
+NetController.exe: ..\dcu ..\bin swakeupicon.res
 
 # builds the CLI tool
-Wakeup.exe:  ..\dcu ..\bin
+Wakeup.exe:  ..\dcu ..\bin swakeupicon.res
 
 
 # deletes the GUI binary
