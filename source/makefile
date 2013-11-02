@@ -3,7 +3,7 @@ ROOT = $(MAKEDIR)\..
 #endif
 MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
 DCC = $(ROOT)\bin\dcc32.exe -Q $*
-BRCC = $(ROOT)\bin\brcc32.exe 
+BRCC = $(ROOT)\bin\brcc32.exe
 
 
 # this is an override of the default implicit rule for  ".dpr.exe" 
@@ -39,6 +39,7 @@ default: ..\dcu ..\bin $(PROJECTS)
 
 
 swakeupicon.res: swakeupicon.rc
+	$(BRCC) $&.rc
 
 # builds the win32 target
 swakeup.mingw: ..\obj ..\bin

@@ -1,6 +1,6 @@
 program NetController;
 
-
+{$R swakeupicon.res}
 
 {$R *.res}
 
