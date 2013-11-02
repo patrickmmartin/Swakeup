@@ -1,17 +1,18 @@
 *.~dfm
 *.~pas
+*.~ddp
 /dcu
 /obj
 /bin
 /doc
-*.~ddp
- *.~dpr
+/source/*.~dpr
 /source/NetController.~dpr
 /source/SWakeup.~bpg
 /source/wakeup.~dpr
-NetController.RES
-NetController.rcscript
-Wakeup.RES
-Wakeup.rcscript
-build_ffi.rcinc
-buildkeys.rcinc
+/source/NetController.res
+/source/NetController.rcscript
+/source/Wakeup.res
+/source/Wakeup.rcscript
+/source/build_ffi.rcinc
+/source/buildkeys.rcinc
+/source/swakeupicon.res
