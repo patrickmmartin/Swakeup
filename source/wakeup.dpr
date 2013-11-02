@@ -2,6 +2,8 @@ program wakeup;
 
 {$APPTYPE CONSOLE}
 
+{$R 'swakeupicon.res' 'swakeupicon.rc'}
+
 {$R *.res}
 
 uses

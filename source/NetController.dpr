@@ -1,5 +1,9 @@
 program NetController;
 
+{$R 'swakeupicon.res' 'swakeupicon.rc'}
+
+{$R *.res}
+
 uses
   Forms,
   NetInfo in 'Utilities\NetInfo.pas',
@@ -18,8 +22,6 @@ uses
   CursorHelper in 'Forms\CursorHelper.pas',
   MACUtils in 'Utilities\MACUtils.pas',
   NameUtils in 'Utilities\NameUtils.pas';
-
-{$R *.res}
 
 begin
   Application.Initialize;

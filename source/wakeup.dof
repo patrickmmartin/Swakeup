@@ -110,12 +110,12 @@ ActiveLang=
 ProjectLang=
 RootDir=
 [Version Info]
-IncludeVerInfo=1
+IncludeVerInfo=0
 AutoIncBuild=0
-MajorVer=0
+MajorVer=1
 MinorVer=0
 Release=0
-Build=0
+Build=1
 Debug=0
 PreRelease=0
 Special=0
@@ -126,14 +126,14 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Patrick Martin
 FileDescription=SWakeup simple WAL controller
-FileVersion=0.0.0.0
+FileVersion=1.0.0.1
 InternalName=Wakeup
 LegalCopyright=(C) 2013 Patrick Martin
 LegalTrademarks=
 OriginalFilename=Wakeup.exe
 ProductName=SWakeup
 ProductVersion=0.0
-Build Time=31/10/2013 20:24:12.49
+Build Time=02/11/2013 22:30:11.55
 Build Machine=TIMELINE
 [HistoryLists\hlUnitAliases]
 Count=1
