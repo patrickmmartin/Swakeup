@@ -24,6 +24,7 @@
 // platform-specific definitions
 #ifdef WIN32
   typedef int in_addr_t;
+  typedef size_t socklen_t; 
 #else
   // standard error for local errors
   #define SOCKET_ERROR -1
@@ -67,7 +68,7 @@ static const int MAGICPACKET_LEN = 102;
 				  "sends a WOL packet to the local broadcast address on port 9"
 
 
-const char PATH_SEP =
+static const char PATH_SEP =
 #ifdef WIN32
                             '\\';
 #else
