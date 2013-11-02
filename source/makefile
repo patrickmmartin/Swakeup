@@ -11,7 +11,7 @@ BRCC = $(ROOT)\bin\brcc32.exe
 .dpr.exe: 
 	@echo [build $@]
 	@buildkeys $@
-	$(BRCC) $&.rcscript
+	$(BRCC) $&.rcscript -fo$&.res
 	$(DCC) 
 
 
@@ -39,7 +39,7 @@ default: ..\dcu ..\bin $(PROJECTS)
 
 
 swakeupicon.res: swakeupicon.rc
-	$(BRCC) $&.rc
+	$(BRCC) $&.rc -fo$&.res
 
 # builds the win32 target
 swakeup.mingw: ..\obj ..\bin
