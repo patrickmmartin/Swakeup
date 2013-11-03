@@ -38,8 +38,8 @@ uses
   ;
 
 resourcestring
-  sWNetGetLastErrorFailedFmt = 'WNetGetLastError failed; error %ld.';
-  sWNetFailedFmt  = '%s failed with code %ld; %s."';
+  sWNetGetLastErrorFailedFmt = 'WNetGetLastError failed; error %d.';
+  sWNetFailedFmt  = '%s failed with code %d; %s."';
 
 type
   PNetResourceArray = ^TNetResourceArray;
