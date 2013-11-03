@@ -1,7 +1,7 @@
 
               VALUE "CompanyName", "Patrick Martin\0"
-              VALUE "ProductVersion", "0.0\0"
+              VALUE "ProductVersion", "1.0\0"
               VALUE "LegalCopyright", "(C) 2013 Patrick Martin\0"
               VALUE "ProductName", "SWakeup\0"
-              VALUE "FileDescription", "SWakeup simple WAL controller\0"
+              VALUE "FileDescription", "A simple WOL controller\0"
 
