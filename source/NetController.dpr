@@ -1,9 +1,11 @@
 program NetController;
 
+
 {$R *.res}
 
 uses
   Forms,
+  XPMan,
   NetInfo in 'Utilities\NetInfo.pas',
   XPMenu in 'Forms\XPMenu.pas',
   MainF in 'Forms\MainF.pas' {frmMain},
