@@ -1,4 +1,3 @@
-MAINICON ICON "swakeup.ico"
 #include <windows.h>
 #include "versioninfo-pre.rcinc"
           VALUE "OriginalFilename", "swakeup.exe"

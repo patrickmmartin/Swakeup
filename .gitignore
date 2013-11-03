@@ -9,6 +9,9 @@
 /source/NetController.~dpr
 /source/SWakeup.~bpg
 /source/wakeup.~dpr
+/source/makefile.~
+/source/swakeup.~rcscript
+/source/versioninfo-pre.~rcinc
 /source/NetController.res
 /source/NetController.rcscript
 /source/Wakeup.res

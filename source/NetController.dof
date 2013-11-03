@@ -115,7 +115,7 @@ AutoIncBuild=0
 MajorVer=1
 MinorVer=0
 Release=0
-Build=1
+Build=2
 Debug=0
 PreRelease=0
 Special=0
@@ -125,16 +125,16 @@ Locale=2057
 CodePage=1252
 [Version Info Keys]
 CompanyName=Patrick Martin
-FileDescription=SWakeup simple WAL controller
-FileVersion=1.0.0.1
+FileDescription=A simple WOL controller
+FileVersion=1.0.0.2
 InternalName=NetController
 LegalCopyright=(C) 2013 Patrick Martin
 LegalTrademarks=
 OriginalFilename=NetController.exe
 ProductName=SWakeup
-ProductVersion=0.0
-Build Time=02/11/2013 22:42:33.96
-Build Machine=TIMELINE
+ProductVersion=1.0
+Build Time=03/11/2013  9:53:30.88
+Build Machine=COMPAQ-DESKTOP
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
