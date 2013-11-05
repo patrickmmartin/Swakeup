@@ -103,7 +103,7 @@ int main(int argc, char * argv[]) {
 	ssize_t retval;
 	size_t position;
 	char magicdata[MAGICPACKET_LEN];
-	in_addr_t destination_ip = 0xffffffff; /* broadcast to all */
+	in_addr_t destination_ip = (in_addr_t) 0xffffffff; /* broadcast to all */
 	uint16_t port = 9;
 	SOCKET sock;
 	
