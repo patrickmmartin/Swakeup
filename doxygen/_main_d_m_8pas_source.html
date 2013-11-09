@@ -124,245 +124,243 @@ $(document).ready(function(){initNavTree('_main_d_m_8pas.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    aeMain: TApplicationEvents;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a985f9c9d3d00abc839364d7bd242ae9c">   22</a></span>&#160;    actFileExit: TFileExit;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    actHelpAbout: TAction;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a54e01d40cca67dc7adb9de46e5db1eaa">   24</a></span>&#160;    actAddMachine: TAction;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    actDeleteMachine: TAction;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a18f980554b3e8364a98526771035111d">   26</a></span>&#160;    actSearchMachines: TAction;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    actStartMachine: TAction;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d">   28</a></span>&#160;    actShutdownMachine: TAction;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    actLoadMachines: TAction;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a94f3e823fb245e7f8efe6f4daa2f9909">   30</a></span>&#160;    actScanMachines: TAction;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    actScanMachine: TAction;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a530a9d58aacf5150d91dcf87bb36cfea">   32</a></span>&#160;    actSaveMachines: TAction;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    procedure MainFormCreate(Sender: TObject);</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a82599db763c35caacf80af69b3a2a537">   34</a></span>&#160;    procedure actScanMachinesExecute(Sender: TObject);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    procedure actScanMachineExecute(Sender: TObject);</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a12a76aa41da93de314d81bd9e5bbb1ef">   36</a></span>&#160;    procedure aeMainHint(Sender: TObject);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    procedure actShutdownMachineExecute(Sender: TObject);</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a14645982d7e985f4b505661ac327e5de">   38</a></span>&#160;    procedure actStartMachineExecute(Sender: TObject);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    procedure actLoadMachinesExecute(Sender: TObject);</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a16c9c509d8545fc3a941ec6d416da740">   40</a></span>&#160;    procedure actSearchMachinesExecute(Sender: TObject);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    procedure actSaveMachinesExecute(Sender: TObject);</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a02f6ac1d3c53e1faaa61dd253a713be6">   42</a></span>&#160;  <span class="keyword">private</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ac32f4cb172af85ac7022f243ce73b09d">   44</a></span>&#160;    procedure ViewMachines(<span class="keyword">const</span> Machines : <a class="code" href="_machines_8pas.html#a97e87da2913c67687f5924d1a91e5f51">TMachines</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    procedure DoServer(<span class="keyword">const</span> Name, Comment : <span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ad40abedabbeef142cdbc1749da386efc">   46</a></span>&#160;  <span class="keyword">public</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    procedure MenuMachinesSetup(Sender: TObject);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    procedure MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  end;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;var</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="_main_d_m_8pas.html#a4245565e084b099a8667c6c7ef596fca">dmMain</a>: <a class="code" href="class_tdm_main.html">TdmMain</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a54e01d40cca67dc7adb9de46e5db1eaa">   24</a></span>&#160;    actSearchMachines: TAction;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    actStartMachine: TAction;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a18f980554b3e8364a98526771035111d">   26</a></span>&#160;    actShutdownMachine: TAction;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    actLoadMachines: TAction;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d">   28</a></span>&#160;    actScanMachines: TAction;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    actScanMachine: TAction;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a82599db763c35caacf80af69b3a2a537">   30</a></span>&#160;    actSaveMachines: TAction;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    procedure MainFormCreate(Sender: TObject);</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a12a76aa41da93de314d81bd9e5bbb1ef">   32</a></span>&#160;    procedure actScanMachinesExecute(Sender: TObject);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    procedure actScanMachineExecute(Sender: TObject);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a14645982d7e985f4b505661ac327e5de">   34</a></span>&#160;    procedure aeMainHint(Sender: TObject);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    procedure actShutdownMachineExecute(Sender: TObject);</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a16c9c509d8545fc3a941ec6d416da740">   36</a></span>&#160;    procedure actStartMachineExecute(Sender: TObject);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    procedure actLoadMachinesExecute(Sender: TObject);</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a02f6ac1d3c53e1faaa61dd253a713be6">   38</a></span>&#160;    procedure actSearchMachinesExecute(Sender: TObject);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    procedure actSaveMachinesExecute(Sender: TObject);</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ac32f4cb172af85ac7022f243ce73b09d">   40</a></span>&#160;  <span class="keyword">private</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ad40abedabbeef142cdbc1749da386efc">   42</a></span>&#160;    procedure ViewMachines(<span class="keyword">const</span> Machines : <a class="code" href="_machines_8pas.html#a97e87da2913c67687f5924d1a91e5f51">TMachines</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    procedure DoServer(<span class="keyword">const</span> Name, Comment : <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    procedure MenuMachinesSetup(Sender: TObject);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    procedure MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  end;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;var</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="_main_d_m_8pas.html#a4245565e084b099a8667c6c7ef596fca">dmMain</a>: <a class="code" href="class_tdm_main.html">TdmMain</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;implementation</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;implementation</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;uses</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  MainF,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  LanWake,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  LanShutdown,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  Windows,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  ServerInfo,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  WMIUtils,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  ResourceDM,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  Variants,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  CursorHelper,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  Forms,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  NetInfo,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  NameUtils,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  MACUtils;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;uses</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  MainF,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  LanWake,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  LanShutdown,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  Windows,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  ServerInfo,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  WMIUtils,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  ResourceDM,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  Variants,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  CursorHelper,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  Forms,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  NetInfo,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  NameUtils,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  MACUtils;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{$R *.dfm}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{$R *.dfm}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;procedure <a class="code" href="class_tdm_main.html">TdmMain</a>.<a class="code" href="class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d">actLoadMachinesExecute</a>(Sender: TObject);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;begin</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="_cursor_helper_8pas.html#ad0349942ffabf0a2dfaee180ec16f7cb">HourGlass</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#a03547d70c5970a3aec7462a66e039fe3">ConfigFile</a> := <span class="stringliteral">&#39;defaulthosts.txt&#39;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#ade74e5e400e140375afa094220b2f6b4">ReadMachines</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  ViewMachines(<a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#a47e5b37509ca1563239353ec98e29702">Machines</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;end;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;procedure <a class="code" href="class_tdm_main.html">TdmMain</a>.<a class="code" href="class_tdm_main.html#af944a16463229c8229284ae9febd4c78">actStartMachineExecute</a>(Sender: TObject);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;begin</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  { TODO : </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">this</span> could perhaps be more ideally the subnet broadcast address ? </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; - really depends on what<span class="stringliteral">&#39;s in the ini file }</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">  SendMagicPacket(frmMain.lvMachines.Selected.SubItems[0], &#39;</span>255.255.255.255<span class="stringliteral">&#39;, 9);</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">procedure TdmMain.MenuMachinesSetup(Sender: TObject);</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">  { TODO : was there supposed to be something in here? }</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral">procedure TdmMain.MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral">  { pass on }</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral">  actScanMachine.Enabled := Selected and Assigned(Item);</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;procedure <a class="code" href="class_tdm_main.html">TdmMain</a>.<a class="code" href="class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d">actLoadMachinesExecute</a>(Sender: TObject);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;begin</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="_cursor_helper_8pas.html#ad0349942ffabf0a2dfaee180ec16f7cb">HourGlass</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#a03547d70c5970a3aec7462a66e039fe3">ConfigFile</a> := <span class="stringliteral">&#39;defaulthosts.txt&#39;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#ade74e5e400e140375afa094220b2f6b4">ReadMachines</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  ViewMachines(<a class="code" href="_machines_8pas.html#aa027ee2e3bd51981638fb12a2acd7438">MachineManager</a>.<a class="code" href="class_t_machine_manager.html#a47e5b37509ca1563239353ec98e29702">Machines</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;end;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;procedure <a class="code" href="class_tdm_main.html">TdmMain</a>.<a class="code" href="class_tdm_main.html#af944a16463229c8229284ae9febd4c78">actStartMachineExecute</a>(Sender: TObject);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;begin</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  { TODO : </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">this</span> could perhaps be more ideally the subnet broadcast address ? </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; - really depends on what<span class="stringliteral">&#39;s in the ini file }</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">  SendMagicPacket(frmMain.lvMachines.Selected.SubItems[0], &#39;</span>255.255.255.255<span class="stringliteral">&#39;, 9);</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">procedure TdmMain.MenuMachinesSetup(Sender: TObject);</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="stringliteral">  { TODO : was there supposed to be something in here? }</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral">procedure TdmMain.MachinesSelectItem(Sender: TObject; Item: TListItem; Selected: Boolean);</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral">  { pass on }</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral">  actScanMachine.Enabled := Selected and Assigned(Item);</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="stringliteral">  actStartMachine.Enabled := Selected and Assigned(Item) and (Item.SubItems[3] = &#39;</span><span class="stringliteral">&#39;);</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral">  actStartMachine.Enabled := Selected and Assigned(Item) and (Item.SubItems[3] = &#39;</span><span class="stringliteral">&#39;);</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="stringliteral">  actShutdownMachine.Enabled := Selected and Assigned(Item) and  (Item.SubItems[2] &lt;&gt; &#39;</span><span class="stringliteral">&#39;);</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">  actShutdownMachine.Enabled := Selected and Assigned(Item) and  (Item.SubItems[2] &lt;&gt; &#39;</span><span class="stringliteral">&#39;);</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="stringliteral">end;</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral">procedure TdmMain.actShutdownMachineExecute(Sender: TObject);</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">  ComputerName : array[0..32] of Char;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="code" href="_main_d_m_8pas.html#a4245565e084b099a8667c6c7ef596fca">  110</a></span>&#160;<span class="stringliteral">  UserName : array[0..256] of Char;</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">  Size : DWORD;</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral">  Size := sizeof(UserName) -1;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">  GetUserName(UserName, Size);</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral">  Size := sizeof(ComputerName) -1;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">  GetComputerName(ComputerName, Size);</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="stringliteral">procedure TdmMain.actShutdownMachineExecute(Sender: TObject);</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="_main_d_m_8pas.html#a4245565e084b099a8667c6c7ef596fca">  106</a></span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="stringliteral">  ComputerName : array[0..32] of Char;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="stringliteral">  UserName : array[0..256] of Char;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="stringliteral">  Size : DWORD;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="stringliteral">  Size := sizeof(UserName) -1;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="stringliteral">  GetUserName(UserName, Size);</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="stringliteral">  Size := sizeof(ComputerName) -1;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="stringliteral">  GetComputerName(ComputerName, Size);</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="stringliteral">  PowerOffMachine(frmMain.lvMachines.Selected.Caption);</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">  PowerOffMachine(frmMain.lvMachines.Selected.Caption);</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="stringliteral">end;</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">procedure TdmMain.aeMainHint(Sender: TObject);</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral">  frmMain.sbMain.Panels[0].Text := Application.Hint;</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">procedure TdmMain.actScanMachineExecute(Sender: TObject);</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral">  MachineSystem : OleVariant;</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d">  133</a></span>&#160;<span class="stringliteral">  if not Assigned(frmMain.lvMachines.Selected) then</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral">    Exit;</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Selected;</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="stringliteral">  frmMain.sbMain.Panels[0].Text := &#39;</span>Testing <span class="stringliteral">&#39; + Item.Caption;</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="stringliteral">  frmMain.sbMain.Refresh;</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="stringliteral">  Item.SubItems[2] := &#39;</span><span class="stringliteral">&#39;;</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="stringliteral">  Item.SubItems[3] := &#39;</span><span class="stringliteral">&#39;;</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="stringliteral">  Item.SubItems[4] := &#39;</span><span class="stringliteral">&#39;;</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="stringliteral">  try</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="stringliteral">    try</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="stringliteral">      with ServerStats.GetCurrentAndUpTime(Item.Caption) do</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="code" href="class_tdm_main.html#af944a16463229c8229284ae9febd4c78">  145</a></span>&#160;<span class="stringliteral">      begin</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="stringliteral">        Item.SubItems[3] := FormatDateTime(&#39;</span>hh mm<span class="stringliteral">&#39;, UpTime);</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="stringliteral">        Item.SubItems[4] := DateTimeToStr(Current);</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="stringliteral">      end;</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="stringliteral">        MachineSystem := GetMachineOS(Item.Caption, [wbemPrivilegeSystemEnvironment]);</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="stringliteral">        if not VarIsEmpty(MachineSystem) then</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="stringliteral">        begin</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="stringliteral">          Item.SubItems[2] := MachineSystem.Status;</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="stringliteral">        end;</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="stringliteral">    except</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="stringliteral">      {}</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ae0c32bdc99c999d54376f8d2b5e2ef31">  157</a></span>&#160;<span class="stringliteral">    end;</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="stringliteral">  finally</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="stringliteral">    frmMain.sbMain.Panels[0].Text := &#39;</span><span class="stringliteral">&#39;;</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="stringliteral">  end;</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="stringliteral">procedure TdmMain.actScanMachinesExecute(Sender: TObject);</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="stringliteral">  i : integer;</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a8c8327a34455f42d506b261c5f0c4058">  166</a></span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Selected;</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="stringliteral">  try</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="stringliteral">    for i := 0 to frmMain.lvMachines.Items.Count - 1 do</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="stringliteral">    begin</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Selected := frmMain.lvMachines.Items[i];</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Refresh;</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="stringliteral">      actScanMachine.Execute;</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="stringliteral">    end;</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="stringliteral">  finally</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="stringliteral">    frmMain.lvMachines.Selected := Item;</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="stringliteral">  end;</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="stringliteral">  frmMain.lvMachines.Selected := Item;</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="stringliteral">procedure TdmMain.MainFormCreate(Sender: TObject);</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="stringliteral">  frmMain.lvMachines.OnSelectItem := MachinesSelectItem;</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ae189f03a61bdf6efddaadab4fa27c0c7">  185</a></span>&#160;<span class="stringliteral">  actLoadMachines.Execute;</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="stringliteral">procedure TdmMain.ViewMachines(const Machines: TMachines);</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="stringliteral">  i : integer;</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="stringliteral">  HourGlass;</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Items.Add();</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="stringliteral">  Item.ImageIndex := -1;</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="stringliteral">  while frmMain.lvMachines.Items.Count &gt; 1 do</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="stringliteral">    frmMain.lvMachines.Items.Delete(0);</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="stringliteral">  for i := Low(Machines) to High(Machines) do</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="stringliteral">  begin</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="stringliteral">    with frmMain.lvMachines.Items.Insert(Item.Index) do</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="stringliteral">    begin</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="stringliteral">      ImageIndex := 0;</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="stringliteral">      StateIndex := 0;</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="stringliteral">      Caption := Machines[i].Name;</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="stringliteral">      SubItems.Text := Machines[i].MAC + #13#10#13#10#13#10#13#10#13#10#13#10;</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="stringliteral">      SubItems[1] := Machines[i].Comment;</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Refresh;</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ab65025ee585138acb8d6bb5629e52a7d">  210</a></span>&#160;<span class="stringliteral">    end;</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="stringliteral">  end;</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="stringliteral">  frmMain.lvMachines.Items.Delete(Item.Index);</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="stringliteral">procedure TdmMain.aeMainHint(Sender: TObject);</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="stringliteral">  frmMain.sbMain.Panels[0].Text := Application.Hint;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="stringliteral">procedure TdmMain.actScanMachineExecute(Sender: TObject);</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d">  129</a></span>&#160;<span class="stringliteral">  MachineSystem : OleVariant;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="stringliteral">  if not Assigned(frmMain.lvMachines.Selected) then</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="stringliteral">    Exit;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Selected;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="stringliteral">  frmMain.sbMain.Panels[0].Text := &#39;</span>Testing <span class="stringliteral">&#39; + Item.Caption;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="stringliteral">  frmMain.sbMain.Refresh;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="stringliteral">  Item.SubItems[2] := &#39;</span><span class="stringliteral">&#39;;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="stringliteral">  Item.SubItems[3] := &#39;</span><span class="stringliteral">&#39;;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="stringliteral">  Item.SubItems[4] := &#39;</span><span class="stringliteral">&#39;;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="stringliteral">  try</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="class_tdm_main.html#af944a16463229c8229284ae9febd4c78">  141</a></span>&#160;<span class="stringliteral">    try</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="stringliteral">      with ServerStats.GetCurrentAndUpTime(Item.Caption) do</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="stringliteral">      begin</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="stringliteral">        Item.SubItems[3] := FormatDateTime(&#39;</span>hh mm<span class="stringliteral">&#39;, UpTime);</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="stringliteral">        Item.SubItems[4] := DateTimeToStr(Current);</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="stringliteral">      end;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="stringliteral">        MachineSystem := GetMachineOS(Item.Caption, [wbemPrivilegeSystemEnvironment]);</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="stringliteral">        if not VarIsEmpty(MachineSystem) then</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="stringliteral">        begin</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="stringliteral">          Item.SubItems[2] := MachineSystem.Status;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="stringliteral">        end;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ae0c32bdc99c999d54376f8d2b5e2ef31">  153</a></span>&#160;<span class="stringliteral">    except</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="stringliteral">      {}</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="stringliteral">    end;</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="stringliteral">  finally</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="stringliteral">    frmMain.sbMain.Panels[0].Text := &#39;</span><span class="stringliteral">&#39;;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="stringliteral">  end;</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="stringliteral">procedure TdmMain.actScanMachinesExecute(Sender: TObject);</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="code" href="class_tdm_main.html#a8c8327a34455f42d506b261c5f0c4058">  162</a></span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="stringliteral">  i : integer;</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Selected;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="stringliteral">  try</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="stringliteral">    for i := 0 to frmMain.lvMachines.Items.Count - 1 do</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="stringliteral">    begin</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Selected := frmMain.lvMachines.Items[i];</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Refresh;</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="stringliteral">      actScanMachine.Execute;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="stringliteral">    end;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="stringliteral">  finally</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="stringliteral">    frmMain.lvMachines.Selected := Item;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="stringliteral">  end;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="stringliteral">  frmMain.lvMachines.Selected := Item;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="stringliteral">procedure TdmMain.MainFormCreate(Sender: TObject);</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ae189f03a61bdf6efddaadab4fa27c0c7">  181</a></span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="stringliteral">  frmMain.lvMachines.OnSelectItem := MachinesSelectItem;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="stringliteral">  actLoadMachines.Execute;</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="stringliteral">procedure TdmMain.ViewMachines(const Machines: TMachines);</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="stringliteral">  i : integer;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="stringliteral">  Item : TListItem;</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="stringliteral">  HourGlass;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="stringliteral">  Item := frmMain.lvMachines.Items.Add();</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="stringliteral">  Item.ImageIndex := -1;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="stringliteral">  while frmMain.lvMachines.Items.Count &gt; 1 do</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="stringliteral">    frmMain.lvMachines.Items.Delete(0);</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="stringliteral">  for i := Low(Machines) to High(Machines) do</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="stringliteral">  begin</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="stringliteral">    with frmMain.lvMachines.Items.Insert(Item.Index) do</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="stringliteral">    begin</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="stringliteral">      ImageIndex := 0;</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="stringliteral">      StateIndex := 0;</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="stringliteral">      Caption := Machines[i].Name;</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="stringliteral">      SubItems.Text := Machines[i].MAC + #13#10#13#10#13#10#13#10#13#10#13#10;</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="code" href="class_tdm_main.html#ab65025ee585138acb8d6bb5629e52a7d">  206</a></span>&#160;<span class="stringliteral">      SubItems[1] := Machines[i].Comment;</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="stringliteral">      frmMain.lvMachines.Refresh;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="stringliteral">    end;</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="stringliteral">  end;</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="stringliteral">  frmMain.lvMachines.Items.Delete(Item.Index);</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="stringliteral">procedure TdmMain.actSearchMachinesExecute(Sender: TObject);</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="code" href="class_tdm_main.html#acab623c26061db8f4835de8fd3490c98">  219</a></span>&#160;<span class="stringliteral">  WN : TNetEnumerator;</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="stringliteral">  Screen.Cursor := crHourGlass;</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="stringliteral">  WN := TNetEnumerator.Create;</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="stringliteral">  try</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="stringliteral">    WN.OnContainer := nil;</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="stringliteral">    WN.OnServer := DoServer;</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="stringliteral">    WN.OnProgress := nil;</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="stringliteral">    WN.Enumerate;</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="stringliteral">    ViewMachines(MachineManager.Machines);</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="stringliteral">  finally</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="stringliteral">    Screen.Cursor := crDefault;</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="stringliteral">    WN.Free;</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="stringliteral">  end;</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="code" href="class_tdm_main.html#acab623c26061db8f4835de8fd3490c98">  215</a></span>&#160;<span class="stringliteral">procedure TdmMain.actSearchMachinesExecute(Sender: TObject);</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="stringliteral">  WN : TNetEnumerator;</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="stringliteral">  Screen.Cursor := crHourGlass;</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="stringliteral">  WN := TNetEnumerator.Create;</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="stringliteral">  try</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="stringliteral">    WN.OnContainer := nil;</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="stringliteral">    WN.OnServer := DoServer;</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="stringliteral">    WN.OnProgress := nil;</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="stringliteral">    WN.Enumerate;</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="stringliteral">    ViewMachines(MachineManager.Machines);</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="stringliteral">  finally</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="stringliteral">    Screen.Cursor := crDefault;</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="stringliteral">    WN.Free;</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="stringliteral">  end;</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="stringliteral">end;</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="stringliteral">procedure TdmMain.DoServer(const Name, Comment: string);</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="stringliteral">var</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="stringliteral">  IPAddress, MACAddress, WSAErr : string;</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="stringliteral">  if (GetIPFromHost(Name, IPAddress, WSAErr)) then</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="stringliteral">    MACAddress := GetRemoteMacAddress(IPAddress);</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="stringliteral">   MachineManager.AddMachine(Name, MACAddress, Comment);</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="stringliteral">procedure TdmMain.DoServer(const Name, Comment: string);</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="stringliteral">var</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="stringliteral">  IPAddress, MACAddress, WSAErr : string;</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="stringliteral">  if (GetIPFromHost(Name, IPAddress, WSAErr)) then</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="stringliteral">    MACAddress := GetRemoteMacAddress(IPAddress);</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="stringliteral">   MachineManager.AddMachine(Name, MACAddress, Comment);</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="stringliteral">end;</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="stringliteral">procedure TdmMain.actSaveMachinesExecute(Sender: TObject);</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="stringliteral">begin</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="stringliteral">    MachineManager.WriteMachines;</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="stringliteral">end;</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="stringliteral">end.</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="stringliteral">procedure TdmMain.actSaveMachinesExecute(Sender: TObject);</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="stringliteral">begin</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="stringliteral">    MachineManager.WriteMachines;</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="stringliteral">end;</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="stringliteral">end.</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_6fbb68216e5856c69f1f680dfc1b4ea1.html">DataModules</a></li><li class="navelem"><a class="el" href="_main_d_m_8pas.html">MainDM.pas</a></li>
-    <li class="footer">Generated on Wed Oct 30 2013 17:47:19 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:27:03 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

@@ -580,27 +580,27 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;  end;</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;var</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>{, <a class="code" href="_ip_scan_8pas.html#abc24d74ee9fc0db4a7ec1b59b231efce">j</a>}: integer;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  i{, j}: integer;</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;begin</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;  Activate(MenuItem);</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;  <span class="keywordflow">if</span> (SubMenus=<span class="keyword">true</span>) then <span class="comment">// +jt</span></div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  begin</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;   <span class="keywordflow">for</span> <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to MenuItem.Count -1 <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;   <span class="keywordflow">for</span> i := 0 to MenuItem.Count -1 <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;   begin</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;     ActivateMenuItem(MenuItem.Items[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>],<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;     ActivateMenuItem(MenuItem.Items[i],<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;   end;</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; end;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;end;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;procedure <a class="code" href="class_t_x_p_menu.html">TXPMenu</a>.<a class="code" href="class_t_x_p_menu.html#ab743dbe7f16c3348537a64cdccb33499">InitItems</a>(wForm: TWinControl; Enable, Update: boolean );</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;var</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  i: integer;</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  Comp: TComponent;</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;begin</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;  <span class="keywordflow">for</span> <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to wForm.ComponentCount - 1 <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;  <span class="keywordflow">for</span> i := 0 to wForm.ComponentCount - 1 <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;  begin</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    Comp := wForm.Components[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>];</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    Comp := wForm.Components[i];</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    InitItem(Comp, Enable, Update); <span class="comment">// Tom: &quot;Thomas Knoblauch&quot; &lt;thomas@tom-the-bomb.de&gt; 27.08</span></div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  end;</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;end;</div>
@@ -637,12 +637,12 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;  procedure <a class="code" href="_x_p_menu_8pas.html#a5821b6cb619214c8460876316b2ac968">ItrateMenu</a>(MenuItem: TMenuItem);</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;  var</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    i: integer;</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  begin</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    Activate(MenuItem);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to MenuItem.Count - 1 do</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    for i := 0 to MenuItem.Count - 1 do</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    begin</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;      <a class="code" href="_x_p_menu_8pas.html#a5821b6cb619214c8460876316b2ac968">ItrateMenu</a>(MenuItem.Items[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>]);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;      <a class="code" href="_x_p_menu_8pas.html#a5821b6cb619214c8460876316b2ac968">ItrateMenu</a>(MenuItem.Items[i]);</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    end;</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;  end;</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;</div>
@@ -908,7 +908,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  IsLine: <span class="keywordtype">boolean</span>;</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;  FTopMenu: <span class="keywordtype">boolean</span>; <span class="comment">// +jt</span></div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  FMenu: TMenu; <span class="comment">// +jt</span></div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer; <span class="comment">// +jt</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;  i: integer; <span class="comment">// +jt</span></div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;begin</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; FTopMenu:=false; <span class="comment">//+jt</span></div>
@@ -933,8 +933,8 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00830"></a><span class="lineno"><a class="code" href="_x_p_menu_8pas.html#ade6ac50ab9c115aba8a9a1c10e35384a">  830</a></span>&#160;    FMenu := TMenuItem(Sender).Parent.GetParentMenu;</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    if FMenu is TMainMenu then</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;   begin</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;     for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to TMenuItem(Sender).GetParentMenu.Items.Count - 1 do</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;       if TMenuItem(Sender).GetParentMenu.Items[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>] = TMenuItem(Sender) then</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;     for i := 0 to TMenuItem(Sender).GetParentMenu.Items.Count - 1 do</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;       if TMenuItem(Sender).GetParentMenu.Items[i] = TMenuItem(Sender) then</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;       begin</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;         FTopMenu := True;</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;         break;</div>
@@ -973,7 +973,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;  B: TBitmap;</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;  IconRect, TextRect, CheckedRect: TRect;</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;  FillRect: TRect; <span class="comment">// +jt</span></div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>, X1, X2: integer;</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;  i, X1, X2: integer;</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;  TextFormat: integer;</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  HasImgLstBitmap: <span class="keywordtype">boolean</span>;</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;  HasBitmap: <span class="keywordtype">boolean</span>;</div>
@@ -1020,8 +1020,8 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;  FMenu := FMenuItem.Parent.GetParentMenu;</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;  <span class="keywordflow">if</span> FMenu is TMainMenu then</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    <span class="keywordflow">for</span> <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to FMenuItem.GetParentMenu.Items.Count - 1 <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;      <span class="keywordflow">if</span> FMenuItem.GetParentMenu.Items[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>] = FMenuItem then</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;    <span class="keywordflow">for</span> i := 0 to FMenuItem.GetParentMenu.Items.Count - 1 <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;      <span class="keywordflow">if</span> FMenuItem.GetParentMenu.Items[i] = FMenuItem then</div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;      begin</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        FTopMenu := True;</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;  <span class="comment">// +jt</span></div>
@@ -1738,7 +1738,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;procedure <a class="code" href="class_t_x_p_menu.html">TXPMenu</a>.<a class="code" href="class_t_x_p_menu.html#a835e84d5e9d2aa329c90469d43b95ee2">ControlBarPaint</a>(Sender: TObject; Control: TControl;</div>
 <div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;  Canvas: TCanvas; var ARect: TRect; var Options: TBandPaintOptions);</div>
 <div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;var</div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: Integer;</div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;  i: Integer;</div>
 <div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;  intInc: integer;</div>
 <div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;begin</div>
 <div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;</div>
@@ -1756,12 +1756,12 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;  Canvas.FillRect(ARect);</div>
 <div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;</div>
 <div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;  intInc := 30;</div>
-<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;  for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := (ARect.Top + 5) to (ARect.Bottom - 5)do</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;  for i := (ARect.Top + 5) to (ARect.Bottom - 5)do</div>
 <div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;  begin</div>
 <div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;    Canvas.Pen.Color := <a class="code" href="_x_p_menu_8pas.html#ae4be4a9fc7d435143b2055158ea28d55">GetShadeColor</a>(Canvas, TControlBar(Sender).Color, intInc);</div>
-<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;    if <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> mod 2 = 0 then</div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;    if i mod 2 = 0 then</div>
 <div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;    begin</div>
-<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;      Canvas.MoveTo(ARect.Left + 3, <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>);</div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;      Canvas.MoveTo(ARect.Left + 3, i);</div>
 <div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;      Canvas.LineTo(ARect.Left + 6, i);</div>
 <div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;      Inc(intInc, 7);</div>
 <div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;    end;</div>
@@ -2538,7 +2538,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l02435"></a><span class="lineno"> 2435</span>&#160;procedure <a class="code" href="class_t_x_p_menu.html">TXPMenu</a>.DrawGradient(ACanvas: TCanvas; ARect: TRect;</div>
 <div class="line"><a name="l02436"></a><span class="lineno"> 2436</span>&#160; IsRightToLeft: <span class="keywordtype">boolean</span>);</div>
 <div class="line"><a name="l02437"></a><span class="lineno"> 2437</span>&#160;var</div>
-<div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l02438"></a><span class="lineno"> 2438</span>&#160;  i: integer;</div>
 <div class="line"><a name="l02439"></a><span class="lineno"> 2439</span>&#160;  v: integer;</div>
 <div class="line"><a name="l02440"></a><span class="lineno"> 2440</span>&#160;  FRect: TRect;</div>
 <div class="line"><a name="l02441"></a><span class="lineno"> 2441</span>&#160;begin</div>
@@ -2548,7 +2548,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l02445"></a><span class="lineno"> 2445</span>&#160;  if IsRightToLeft then</div>
 <div class="line"><a name="l02446"></a><span class="lineno"> 2446</span>&#160;  begin</div>
 <div class="line"><a name="l02447"></a><span class="lineno"> 2447</span>&#160;    fRect.Left := fRect.Right - 1;</div>
-<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;    for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := ARect.Right Downto ARect.Left do</div>
+<div class="line"><a name="l02448"></a><span class="lineno"> 2448</span>&#160;    for i := ARect.Right Downto ARect.Left do</div>
 <div class="line"><a name="l02449"></a><span class="lineno"> 2449</span>&#160;    begin</div>
 <div class="line"><a name="l02450"></a><span class="lineno"> 2450</span>&#160;      if (fRect.Left &lt; ARect.Right)</div>
 <div class="line"><a name="l02451"></a><span class="lineno"> 2451</span>&#160;        and (fRect.Left &gt; ARect.Right - FIconWidth + 5) then</div>
@@ -2567,7 +2567,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l02464"></a><span class="lineno"> 2464</span>&#160;  else</div>
 <div class="line"><a name="l02465"></a><span class="lineno"> 2465</span>&#160;  begin</div>
 <div class="line"><a name="l02466"></a><span class="lineno"> 2466</span>&#160;    fRect.Right := fRect.Left + 1;</div>
-<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;    for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := ARect.Left to ARect.Right do</div>
+<div class="line"><a name="l02467"></a><span class="lineno"> 2467</span>&#160;    for i := ARect.Left to ARect.Right do</div>
 <div class="line"><a name="l02468"></a><span class="lineno"> 2468</span>&#160;    begin</div>
 <div class="line"><a name="l02469"></a><span class="lineno"> 2469</span>&#160;      if (fRect.Left &gt; ARect.Left)</div>
 <div class="line"><a name="l02470"></a><span class="lineno"> 2470</span>&#160;        and (fRect.Left &lt; ARect.Left + FIconWidth + 5) then</div>
@@ -2766,15 +2766,15 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l02663"></a><span class="lineno"> 2663</span>&#160;</div>
 <div class="line"><a name="l02664"></a><span class="lineno"> 2664</span>&#160;function <a class="code" href="_x_p_menu_8pas.html#a28de0622b4377c1802e2232bd704c450">MergColor</a>(Colors: Array of TColor): TColor;</div>
 <div class="line"><a name="l02665"></a><span class="lineno"> 2665</span>&#160;var</div>
-<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;  r, g, b, <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l02666"></a><span class="lineno"> 2666</span>&#160;  r, g, b, i: integer;</div>
 <div class="line"><a name="l02667"></a><span class="lineno"> 2667</span>&#160;  clr: TColor;</div>
 <div class="line"><a name="l02668"></a><span class="lineno"> 2668</span>&#160;begin</div>
 <div class="line"><a name="l02669"></a><span class="lineno"> 2669</span>&#160;  r := 0; g:= 0; b:= 0;</div>
 <div class="line"><a name="l02670"></a><span class="lineno"> 2670</span>&#160;</div>
-<div class="line"><a name="l02671"></a><span class="lineno"> 2671</span>&#160;  for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to High(Colors) do</div>
+<div class="line"><a name="l02671"></a><span class="lineno"> 2671</span>&#160;  for i := 0 to High(Colors) do</div>
 <div class="line"><a name="l02672"></a><span class="lineno"> 2672</span>&#160;  begin</div>
 <div class="line"><a name="l02673"></a><span class="lineno"> 2673</span>&#160;</div>
-<div class="line"><a name="l02674"></a><span class="lineno"> 2674</span>&#160;    clr := ColorToRGB(Colors[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>]);</div>
+<div class="line"><a name="l02674"></a><span class="lineno"> 2674</span>&#160;    clr := ColorToRGB(Colors[i]);</div>
 <div class="line"><a name="l02675"></a><span class="lineno"> 2675</span>&#160;    r := r + (Clr and $000000FF) div High(Colors);</div>
 <div class="line"><a name="l02676"></a><span class="lineno"> 2676</span>&#160;    g := g + ((Clr and $0000FF00) shr 8) div High(Colors);</div>
 <div class="line"><a name="l02677"></a><span class="lineno"> 2677</span>&#160;    b := b + ((Clr and $00FF0000) shr 16) div High(Colors);</div>
@@ -5056,7 +5056,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l04953"></a><span class="lineno"> 4953</span>&#160;<span class="comment">// Listens to messages sent to the application and looks if a window is inserted.</span></div>
 <div class="line"><a name="l04954"></a><span class="lineno"> 4954</span>&#160;function <a class="code" href="class_t_x_p_menu_manager.html">TXPMenuManager</a>.MainWindowHook(var Message: TMessage): <span class="keywordtype">boolean</span>;</div>
 <div class="line"><a name="l04955"></a><span class="lineno"> 4955</span>&#160;var</div>
-<div class="line"><a name="l04956"></a><span class="lineno"> 4956</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l04956"></a><span class="lineno"> 4956</span>&#160;  i: integer;</div>
 <div class="line"><a name="l04957"></a><span class="lineno"> 4957</span>&#160;  NewForm: TCustomForm;</div>
 <div class="line"><a name="l04958"></a><span class="lineno"> 4958</span>&#160;</div>
 <div class="line"><a name="l04959"></a><span class="lineno"> 4959</span>&#160;  FMenuItem: TMenuItem; <span class="comment">// +jt</span></div>
@@ -5096,8 +5096,8 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div class="line"><a name="l04993"></a><span class="lineno"> 4993</span>&#160; try</div>
 <div class="line"><a name="l04994"></a><span class="lineno"> 4994</span>&#160;    if (FPendingFormsList.Count &gt; 0) then</div>
 <div class="line"><a name="l04995"></a><span class="lineno"> 4995</span>&#160;    begin</div>
-<div class="line"><a name="l04996"></a><span class="lineno"> 4996</span>&#160;      for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to FPendingFormsList.Count - 1 do begin</div>
-<div class="line"><a name="l04997"></a><span class="lineno"> 4997</span>&#160;        NewForm := TCustomForm(FPendingFormsList[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>]);</div>
+<div class="line"><a name="l04996"></a><span class="lineno"> 4996</span>&#160;      for i := 0 to FPendingFormsList.Count - 1 do begin</div>
+<div class="line"><a name="l04997"></a><span class="lineno"> 4997</span>&#160;        NewForm := TCustomForm(FPendingFormsList[i]);</div>
 <div class="line"><a name="l04998"></a><span class="lineno"> 4998</span>&#160;        if FFormList.IndexOf(NewForm) &lt; 0 then begin</div>
 <div class="line"><a name="l04999"></a><span class="lineno"> 4999</span>&#160;          FFormList.Add(NewForm);</div>
 <div class="line"><a name="l05000"></a><span class="lineno"> 5000</span>&#160;          if not(FDisableSubclassing) then</div>
@@ -5229,7 +5229,7 @@ $(document).ready(function(){initNavTree('_x_p_menu_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f5ddc4b96038e2e782829a8a44084eee.html">Forms</a></li><li class="navelem"><a class="el" href="_x_p_menu_8pas.html">XPMenu.pas</a></li>
-    <li class="footer">Generated on Wed Oct 30 2013 17:47:19 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:27:04 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

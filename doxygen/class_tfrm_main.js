@@ -2,8 +2,6 @@ var class_tfrm_main =
 [
     [ "FormCreate", "class_tfrm_main.html#adcce8dd15a6e7d218f833a63e1857e22", null ],
     [ "lvMachines", "class_tfrm_main.html#a94a8c84f3471589ff496f35e30597c11", null ],
-    [ "mnuAddMachine", "class_tfrm_main.html#aed656db3e0f55e7c0cdf71ca976433da", null ],
-    [ "mnuDeleteMachine", "class_tfrm_main.html#a1b08c968dc9ef70689b5e4f64bf263c1", null ],
     [ "mnuFile", "class_tfrm_main.html#aae25b350a06ff3c261983b9a64b98e43", null ],
     [ "mnuFileExit", "class_tfrm_main.html#ac1c32d5c6a55a98766c3e462a093d5e3", null ],
     [ "mnuHelp", "class_tfrm_main.html#a6c89fedead5262d2e2b80179b9d7529d", null ],
@@ -23,14 +21,12 @@ var class_tfrm_main =
     [ "pmnuStartMachine", "class_tfrm_main.html#a727b8c00dc5e101c003790af831a1e65", null ],
     [ "sbMain", "class_tfrm_main.html#a3043928d00015936b4f2959c47ae1d3d", null ],
     [ "sepPowerList", "class_tfrm_main.html#ae718b15ad53a0deb003eccbc7a1e721b", null ],
-    [ "ToolBar1", "class_tfrm_main.html#a1a4c6949f85b42d25fadac77b2ba9bdd", null ],
-    [ "ToolButton1", "class_tfrm_main.html#a5a93f50849dfea91238f3bc22a8f1de7", null ],
-    [ "ToolButton2", "class_tfrm_main.html#a1ed630cd906cac2b913331a06607f4b9", null ],
-    [ "ToolButton3", "class_tfrm_main.html#a97a500ea225f402d4052c63eee0202e1", null ],
-    [ "ToolButton4", "class_tfrm_main.html#a0499e4f04f4c944d7b5a2a2a333cee31", null ],
-    [ "ToolButton5", "class_tfrm_main.html#a7c3ca8e4d339a4707c2295bf845c4ffd", null ],
-    [ "ToolButton6", "class_tfrm_main.html#a50a8bb591518ed5889646ce04fff296f", null ],
-    [ "ToolButton7", "class_tfrm_main.html#ab8705252a41b6ddbcc0d96504aaf885a", null ],
-    [ "ToolButton8", "class_tfrm_main.html#a2ff2f2b78afec17344635b5f1c28a49f", null ],
-    [ "ToolButton9", "class_tfrm_main.html#a8abe238cb7d06fe8ea6378b0b02b9308", null ]
+    [ "tbLoadMachines", "class_tfrm_main.html#a814a7902c8ff7238ef7be5791e8d389a", null ],
+    [ "tbSaveMachines", "class_tfrm_main.html#abf0db82cdbfa9355f8b01656bc2f7ccf", null ],
+    [ "tbScaMachines", "class_tfrm_main.html#a432e9de4e487cad58c07b1ad091da606", null ],
+    [ "tbScanMachines", "class_tfrm_main.html#adedc42e97bc72f03cd216aa36f843f9f", null ],
+    [ "tbSearch", "class_tfrm_main.html#a8a3c125c8c3ffdc245e2c3e5f2a24000", null ],
+    [ "tbStart", "class_tfrm_main.html#acbd249de9d4025e6d59c075f1269a723", null ],
+    [ "tbStopMachine", "class_tfrm_main.html#a9b5478f3c67140234089e4b8e1248b44", null ],
+    [ "ToolBar1", "class_tfrm_main.html#a1a4c6949f85b42d25fadac77b2ba9bdd", null ]
 ];

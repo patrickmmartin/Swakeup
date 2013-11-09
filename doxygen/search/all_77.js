@@ -33,6 +33,5 @@ var searchData=
   ['wm_5fdrawmenuborder2',['WM_DRAWMENUBORDER2',['../_x_p_menu_8pas.html#a76da5fff1027cf2b121845995cf3e271',1,'XPMenu.pas']]],
   ['wmiutils_2epas',['WMIUtils.pas',['../_w_m_i_utils_8pas.html',1,'']]],
   ['writemachines',['WriteMachines',['../class_t_machine_manager.html#a55e555f7b57f6802b3d9d327a9473345',1,'TMachineManager']]],
-  ['wsadata',['WSAData',['../_ip_scan_8pas.html#a13ec20915ad641afc45af799f73104c4',1,'IpScan.pas']]],
   ['wsaerrormessage',['WSAErrorMessage',['../_i_p_addresses_8pas.html#ab96e5e48dc5450de968aee8aa71ae8c2',1,'IPAddresses.pas']]]
 ];

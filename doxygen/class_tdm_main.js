@@ -11,8 +11,6 @@ var class_tdm_main =
     [ "MachinesSelectItem", "class_tdm_main.html#a8c8327a34455f42d506b261c5f0c4058", null ],
     [ "MainFormCreate", "class_tdm_main.html#aed2858b5c2a9004c98a0c4803cb4379c", null ],
     [ "MenuMachinesSetup", "class_tdm_main.html#ae0c32bdc99c999d54376f8d2b5e2ef31", null ],
-    [ "actAddMachine", "class_tdm_main.html#a94f3e823fb245e7f8efe6f4daa2f9909", null ],
-    [ "actDeleteMachine", "class_tdm_main.html#a530a9d58aacf5150d91dcf87bb36cfea", null ],
     [ "actFileExit", "class_tdm_main.html#a18f980554b3e8364a98526771035111d", null ],
     [ "actHelpAbout", "class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d", null ],
     [ "actLoadMachines", "class_tdm_main.html#a16c9c509d8545fc3a941ec6d416da740", null ],

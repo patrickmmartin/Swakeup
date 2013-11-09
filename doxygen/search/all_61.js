@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['actaddmachine',['actAddMachine',['../class_tdm_main.html#a94f3e823fb245e7f8efe6f4daa2f9909',1,'TdmMain']]],
-  ['actdeletemachine',['actDeleteMachine',['../class_tdm_main.html#a530a9d58aacf5150d91dcf87bb36cfea',1,'TdmMain']]],
   ['actfileexit',['actFileExit',['../class_tdm_main.html#a18f980554b3e8364a98526771035111d',1,'TdmMain']]],
   ['acthelpabout',['actHelpAbout',['../class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d',1,'TdmMain']]],
   ['activatemenuitem',['ActivateMenuItem',['../class_t_x_p_menu.html#ac90f62f0f4d7157620e78549d2cb39b2',1,'TXPMenu']]],
@@ -21,11 +19,10 @@ var searchData=
   ['actshutdownmachineexecute',['actShutdownMachineExecute',['../class_tdm_main.html#ae189f03a61bdf6efddaadab4fa27c0c7',1,'TdmMain']]],
   ['actstartmachine',['actStartMachine',['../class_tdm_main.html#a12a76aa41da93de314d81bd9e5bbb1ef',1,'TdmMain']]],
   ['actstartmachineexecute',['actStartMachineExecute',['../class_tdm_main.html#af944a16463229c8229284ae9febd4c78',1,'TdmMain']]],
-  ['adapterstatus',['AdapterStatus',['../struct_t_n_b_stat.html#a142a4611299713405d667c5b9f4c4154',1,'TNBStat']]],
   ['add',['Add',['../class_t_x_p_menu_manager.html#a843edc9ea6b5a9cc9b5e3ce25e3a92f4',1,'TXPMenuManager']]],
   ['addform',['AddForm',['../class_t_x_p_menu_manager.html#a5f87b7befc6650e96ee8436c34edec3d',1,'TXPMenuManager']]],
   ['addmachine',['AddMachine',['../class_t_machine_manager.html#aeb49bf7aae1c6aa2d1c78677f98e3320',1,'TMachineManager']]],
-  ['address',['Address',['../class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6',1,'TfrmServers::Address()'],['../struct_t_icmp_echo_reply.html#a86afd85c9b199d26033290245acb3aac',1,'TIcmpEchoReply::Address()']]],
+  ['address',['Address',['../class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6',1,'TfrmServers']]],
   ['aemain',['aeMain',['../class_tdm_main.html#a54e01d40cca67dc7adb9de46e5db1eaa',1,'TdmMain']]],
   ['aemainhint',['aeMainHint',['../class_tdm_main.html#ab65025ee585138acb8d6bb5629e52a7d',1,'TdmMain']]],
   ['almain',['alMain',['../class_tdm_main.html#a985f9c9d3d00abc839364d7bd242ae9c',1,'TdmMain']]],

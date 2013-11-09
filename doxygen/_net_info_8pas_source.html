@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  ;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;resourcestring</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  sWNetGetLastErrorFailedFmt = <span class="stringliteral">&#39;WNetGetLastError failed; error %ld.&#39;</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  sWNetFailedFmt  = <span class="stringliteral">&#39;%s failed with code %ld; %s.&quot;&#39;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  sWNetGetLastErrorFailedFmt = <span class="stringliteral">&#39;WNetGetLastError failed; error %d.&#39;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  sWNetFailedFmt  = <span class="stringliteral">&#39;%s failed with code %d; %s.&quot;&#39;</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;type</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  PNetResourceArray = ^TNetResourceArray;</div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  cbBuffer : DWORD;      <span class="comment">// 16K is a good size</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  cEntries : DWORD; <span class="comment">// enumerate all possible entries</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  PNetRes : PNetResourceArray ;     <span class="comment">// pointer to enumerated structures</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> : DWORD;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  i : DWORD;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;begin</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  cbBuffer := 16384;      <span class="comment">// 16K is a good size</span></div>
@@ -255,9 +255,9 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      if (ResultEnum = NO_ERROR) then</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      begin</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          Inc(ResourcesToEnumerate, cEntries);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          for <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0 to cEntries - 1 do</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          for i := 0 to cEntries - 1 do</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          begin</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            HandleEntry(PNetRes[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>]);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            HandleEntry(PNetRes[i]);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;           if ( (RESOURCEUSAGE_CONTAINER = (PNetRes[i].dwUsage and RESOURCEUSAGE_CONTAINER))</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                  and not (PNetRes[i].dwDisplayType = RESOURCEDISPLAYTYPE_SERVER) ) then</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          begin</div>
@@ -382,7 +382,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b05a5fa85f84bfc9013183c9d87f9a36.html">Utilities</a></li><li class="navelem"><a class="el" href="_net_info_8pas.html">NetInfo.pas</a></li>
-    <li class="footer">Generated on Wed Oct 30 2013 17:47:19 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:27:04 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

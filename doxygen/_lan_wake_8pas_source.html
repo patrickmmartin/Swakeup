@@ -124,160 +124,148 @@ $(document).ready(function(){initNavTree('_lan_wake_8pas.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;uses</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#a4ea9e2a27a8aab0c91df7691eb2a1679">   23</a></span>&#160;  Windows,  { DWORD }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  SysUtils  { StrToInt }</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#a8269b416ae673c6275c313df957140c4">   25</a></span>&#160;  ;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  SysUtils,  { StrToInt }</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#a8269b416ae673c6275c313df957140c4">   25</a></span>&#160;  Classes</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">function</span> <a class="code" href="_lan_wake_8pas.html#ab156d61d09567be2f121b1fb16c052ff">CheckMAC</a>(<span class="keyword">const</span> MacAddress: <span class="keywordtype">string</span>): Boolean;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;var</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: Integer;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  P, Start: PChar;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  s: string;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;begin</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  Result := True;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    P := PChar(MacAddress);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> P^ &lt;&gt; #0 <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    begin</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      Start := P;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">while</span> not (P^ in [#0, #45]) do Inc(P);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      SetString(s, Start, P - Start);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      StrToInt(HexDisplayPrefix + s);</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#ab156d61d09567be2f121b1fb16c052ff">   44</a></span>&#160;      Inc(<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      if P^ &lt;&gt; <span class="preprocessor">#0 then Inc(P);</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span>    end;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> i &lt;&gt; 6 then Abort;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  except</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Result := False;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  end;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;end;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">function</span> <a class="code" href="_lan_wake_8pas.html#aeffbc5d95a786af5bba9d2baf35442ee">CheckIP</a>(<span class="keyword">const</span> IpAddress: <span class="keywordtype">string</span>): Boolean;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;var</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  i: Integer;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  P, Start: PChar;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  s: string;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;begin</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  Result := True;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    i := 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    P := PChar(IpAddress);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">while</span> P^ &lt;&gt; #0 <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    begin</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      Start := P;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keywordflow">while</span> not (P^ in [#0, #46]) do Inc(P);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      SetString(s, Start, P - Start);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      if not (StrToInt(s) in [0..255]) then Abort;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      Inc(i);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      Inc(P);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      if P^ &lt;&gt; <span class="preprocessor">#0 then Inc(P);</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>    end;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> i &lt;&gt; 4 then Abort;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  except</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Result := False;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#aeffbc5d95a786af5bba9d2baf35442ee">   76</a></span>&#160;  end;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;end;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">function</span> <a class="code" href="_lan_wake_8pas.html#a82c1f0043499a8835a019c7ce50cba75">CheckPort</a>(<span class="keyword">const</span> Port: <span class="keywordtype">string</span>): Boolean;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;var</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  nPort: Integer;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;begin</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  Result := True;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    nPort := StrToInt(Port);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (nPort &lt; Low(Word)) or (nPort &gt; High(Word)) then</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      Abort;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  except</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    Result := False;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  end;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;end;  </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;const</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  MAGICPACKET_LEN = 102;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;procedure <a class="code" href="_lan_wake_8pas.html#a4c30ae4ec96558735ffb31d9f468498a">SendMagicPacketRaw</a>(const MacAddr : TMacAddress;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                             const IP : integer;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                             const Port : Word);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  procedure CheckWinSockResult(ResultCode: Integer; const FuncName: <span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  var</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ErrorCode: Integer;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  begin</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    if ResultCode &lt;&gt; 0 then</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    begin</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      ErrorCode := WSAGetLastError;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      raise Exception.CreateFmt(&#39;Winsock Error: %s, %d, %s&#39;,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        [SysErrorMessage(ErrorCode), ErrorCode, FuncName]);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    end;</div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#a82c1f0043499a8835a019c7ce50cba75">  109</a></span>&#160;  end;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;var</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <a class="code" href="_ip_scan_8pas.html#a13ec20915ad641afc45af799f73104c4">WSAData</a>: TWSAData;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  Sock: TSocket;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  Addr: TSockAddr;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  OptVal: LongBool;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  RetVal: Integer;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  Position: DWORD;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  MagicData: array[0..MAGICPACKET_LEN - 1] of Byte;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;begin</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  CheckWinSockResult(WSAStartup($0101, <a class="code" href="_ip_scan_8pas.html#a13ec20915ad641afc45af799f73104c4">WSAData</a>), &#39;WSAStartup&#39;);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  try</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    Sock := socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    if Sock = INVALID_SOCKET then</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      CheckWinSockResult(Sock, &#39;socket&#39;);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    Addr.sin_family := AF_INET;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    Addr.sin_port := htons(Port);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    Addr.sin_addr.S_addr := IP;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    if Addr.sin_addr.S_addr = INADDR_BROADCAST then</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    begin</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      OptVal := True;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      CheckWinSockResult(setsockopt(Sock, SOL_SOCKET, SO_BROADCAST,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                         PChar(@OptVal), SizeOf(OptVal)), &#39;setsockopt&#39;);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    end;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    FillChar(MagicData, SizeOf(MagicData), $FF);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    Position := <a class="code" href="_lan_wake_8pas.html#a4ea9e2a27a8aab0c91df7691eb2a1679">PHYSADDR_LEN</a>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    while Position &lt; SizeOf(MagicData) do</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    begin</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      Move(MacAddr, Pointer(DWORD(@MagicData) + Position)^, PHYSADDR_LEN);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      Inc(Position, PHYSADDR_LEN);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    end;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    RetVal := sendto(Sock, MagicData, SizeOf(MagicData), 0, Addr, SizeOf(Addr));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    if RetVal = SOCKET_ERROR then</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      CheckWinSockResult(RetVal, &#39;sendto&#39;);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    CheckWinSockResult(closesocket(Sock), &#39;closesocket&#39;);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  finally</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    CheckWinSockResult(WSACleanup, &#39;WSACleanup&#39;);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  end;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;end;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;procedure <a class="code" href="_lan_wake_8pas.html#ad0c45834136701069773ddb89b55ceb1">SendMagicPacket</a>(const MacAddress, IpAddress: <span class="keywordtype">string</span>; Port: Word);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;var</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  MacAddr : TMacAddress;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;begin</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  { TODO : perhaps there could some validation before passing on from <span class="keyword">this</span> <span class="keyword">function</span>... }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">function</span> <a class="code" href="_lan_wake_8pas.html#ab156d61d09567be2f121b1fb16c052ff">CheckMAC</a>(<span class="keyword">const</span> MacAddress: <span class="keywordtype">string</span>): Boolean;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;var</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  i : integer;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;begin</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  Result := False;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {i - fixed length}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span> ( Length(MacAddress) &lt;&gt; Length(<span class="stringliteral">&#39;ab:cd:ef:ab:cd:ef&#39;</span>) ) then</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    exit;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  {ii - check <span class="keywordflow">for</span> hex format in all elements }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">for</span> i := 0 to 5 <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (-1 = (StrToIntDef(HexDisplayPrefix + Copy(MacAddress, i* 3 + 1, 2), -1))) then</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Exit;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Result := True;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;end;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">function</span> <a class="code" href="_lan_wake_8pas.html#aeffbc5d95a786af5bba9d2baf35442ee">CheckIP</a>(<span class="keyword">const</span> IpAddress: <span class="keywordtype">string</span>): Boolean;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#ab156d61d09567be2f121b1fb16c052ff">   45</a></span>&#160;var</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  SL: TStringList;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  i : integer;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  octet : integer;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;begin</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  Result := False;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  SL := TStringList.Create;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    SL.Delimiter := <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    SL.DelimitedText := IpAddress;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {i - must be 4 octets}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (SL.Count &lt;&gt; 4) then</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      Exit;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {ii - must be a byte }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> i := 0 to 3 <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    begin</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      octet := StrToIntDef(SL[i], -1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">if</span> (octet &lt; 0) or (octet &gt; 255) then</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Exit;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;     end;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;     Result := True;   </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  finally</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    SL.Free;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  end;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#aeffbc5d95a786af5bba9d2baf35442ee">   69</a></span>&#160;end;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;function <a class="code" href="_lan_wake_8pas.html#a82c1f0043499a8835a019c7ce50cba75">CheckPort</a>(const Port: <span class="keywordtype">string</span>): Boolean;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;var</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  nPort: Integer;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;begin</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  Result := True;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  nPort := StrToIntDef(Port, -1);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  if (nPort &lt; Low(Word)) or (nPort &gt; High(Word)) then</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Result := False;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;end;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;const</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  MAGICPACKET_LEN = 102;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;procedure <a class="code" href="_lan_wake_8pas.html#a4c30ae4ec96558735ffb31d9f468498a">SendMagicPacketRaw</a>(const MacAddr : TMacAddress;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                             const IP : integer;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                             const Port : Word);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  procedure CheckWinSockResult(ResultCode: Integer; const FuncName: <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  var</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ErrorCode: Integer;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  begin</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    if ResultCode &lt;&gt; 0 then</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    begin</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      ErrorCode := WSAGetLastError;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      raise Exception.CreateFmt(&#39;Winsock Error: %s, %d, %s&#39;,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        [SysErrorMessage(ErrorCode), ErrorCode, FuncName]);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    end;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  end;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;var</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  WSAData: TWSAData;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  Sock: TSocket;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  Addr: TSockAddr;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="code" href="_lan_wake_8pas.html#a82c1f0043499a8835a019c7ce50cba75">  103</a></span>&#160;  OptVal: LongBool;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  RetVal: Integer;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  Position: DWORD;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  MagicData: array[0..MAGICPACKET_LEN - 1] of Byte;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;begin</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  CheckWinSockResult(WSAStartup($0101, WSAData), &#39;WSAStartup&#39;);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  try</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    Sock := socket(PF_INET, SOCK_DGRAM, IPPROTO_IP);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    if Sock = INVALID_SOCKET then</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      CheckWinSockResult(Sock, &#39;socket&#39;);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Addr.sin_family := AF_INET;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    Addr.sin_port := htons(Port);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    Addr.sin_addr.S_addr := IP;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    if Addr.sin_addr.S_addr = INADDR_BROADCAST then</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    begin</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      OptVal := True;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      CheckWinSockResult(setsockopt(Sock, SOL_SOCKET, SO_BROADCAST,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                         PChar(@OptVal), SizeOf(OptVal)), &#39;setsockopt&#39;);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    end;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    FillChar(MagicData, SizeOf(MagicData), $FF);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    Position := <a class="code" href="_lan_wake_8pas.html#a4ea9e2a27a8aab0c91df7691eb2a1679">PHYSADDR_LEN</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    while Position &lt; SizeOf(MagicData) do</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    begin</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      Move(MacAddr, Pointer(DWORD(@MagicData) + Position)^, PHYSADDR_LEN);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      Inc(Position, PHYSADDR_LEN);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    end;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    RetVal := sendto(Sock, MagicData, SizeOf(MagicData), 0, Addr, SizeOf(Addr));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    if RetVal = SOCKET_ERROR then</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      CheckWinSockResult(RetVal, &#39;sendto&#39;);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    CheckWinSockResult(closesocket(Sock), &#39;closesocket&#39;);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  finally</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    CheckWinSockResult(WSACleanup, &#39;WSACleanup&#39;);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  end;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;end;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;procedure <a class="code" href="_lan_wake_8pas.html#ad0c45834136701069773ddb89b55ceb1">SendMagicPacket</a>(const MacAddress, IpAddress: <span class="keywordtype">string</span>; Port: Word);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;var</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  MacAddr : TMacAddress;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;begin</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  { TODO : perhaps there could be some validation before passing on from <span class="keyword">this</span> <span class="keyword">function</span>... }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  MacAddr[0] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 1, 2));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  MacAddr[1] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 4, 2));</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  MacAddr[2] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 7, 2));</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  MacAddr[3] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 10, 2));</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  MacAddr[4] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 13, 2));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  MacAddr[5] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 16, 2));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <a class="code" href="_lan_wake_8pas.html#a4c30ae4ec96558735ffb31d9f468498a">SendMagicPacketRaw</a>(MacAddr, inet_addr(PChar(IpAddress)), Port);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;end;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  MacAddr[0] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 1, 2));</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  MacAddr[1] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 4, 2));</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  MacAddr[2] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 7, 2));</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  MacAddr[3] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 10, 2));</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  MacAddr[4] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 13, 2));</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  MacAddr[5] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 16, 2));</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="_lan_wake_8pas.html#a4c30ae4ec96558735ffb31d9f468498a">SendMagicPacketRaw</a>(MacAddr, inet_addr(PChar(IpAddress)), Port);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;end;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;end.</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;end.</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b05a5fa85f84bfc9013183c9d87f9a36.html">Utilities</a></li><li class="navelem"><a class="el" href="_lan_wake_8pas.html">LanWake.pas</a></li>
-    <li class="footer">Generated on Wed Oct 30 2013 17:47:19 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:27:04 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

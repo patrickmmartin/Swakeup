@@ -155,18 +155,18 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;var</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  found : boolean;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ListItem : TListItem;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>: integer;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  i: integer;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  IPAddress, WSAErr : string;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;begin</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> := 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  i := 0;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  found := <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a> &lt; lvServers.Items.Count) and not found <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">while</span> (i &lt; lvServers.Items.Count) and not found <span class="keywordflow">do</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  begin</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ListItem := lvServers.Items[<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ListItem := lvServers.Items[i];</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (ListItem.Caption = RemoteName) then</div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_tfrm_servers.html#a311f07b932fac306f7d6542d82d93069">   65</a></span>&#160;      found := <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6">   66</a></span>&#160;    Inc(<a class="code" href="_ip_scan_8pas.html#af9273b3f80307157e86d5ecc9697c2b8">i</a>);  </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6">   66</a></span>&#160;    Inc(i);  </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  end;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">if</span> not found then</div>
@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f5ddc4b96038e2e782829a8a44084eee.html">Forms</a></li><li class="navelem"><a class="el" href="_servers_f_8pas.html">ServersF.pas</a></li>
-    <li class="footer">Generated on Wed Oct 30 2013 17:47:19 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:27:03 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

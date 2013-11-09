@@ -13,7 +13,7 @@ var NAVTREE =
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
@@ -27,7 +27,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_c_o_m_utils_8pas.html",
-"class_t_wait_cursor.html#ae4f0158c455d552e08a5cc206308c4b5",
+"class_tdm_main.html#acab623c26061db8f4835de8fd3490c98",
 ];
 
 var navTreeSubIndices = new Array();

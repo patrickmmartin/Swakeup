@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['actaddmachine',['actAddMachine',['../class_tdm_main.html#a94f3e823fb245e7f8efe6f4daa2f9909',1,'TdmMain']]],
-  ['actdeletemachine',['actDeleteMachine',['../class_tdm_main.html#a530a9d58aacf5150d91dcf87bb36cfea',1,'TdmMain']]],
   ['actfileexit',['actFileExit',['../class_tdm_main.html#a18f980554b3e8364a98526771035111d',1,'TdmMain']]],
   ['acthelpabout',['actHelpAbout',['../class_tdm_main.html#abf360d977c1b8217f6e4c5e0ffa4f01d',1,'TdmMain']]],
   ['active',['Active',['../class_t_x_p_menu.html#ad084e4387d83586ad660effb6627a1c5',1,'TXPMenu']]],
@@ -13,8 +11,7 @@ var searchData=
   ['actsearchmachines',['actSearchMachines',['../class_tdm_main.html#a82599db763c35caacf80af69b3a2a537',1,'TdmMain']]],
   ['actshutdownmachine',['actShutdownMachine',['../class_tdm_main.html#a14645982d7e985f4b505661ac327e5de',1,'TdmMain']]],
   ['actstartmachine',['actStartMachine',['../class_tdm_main.html#a12a76aa41da93de314d81bd9e5bbb1ef',1,'TdmMain']]],
-  ['adapterstatus',['AdapterStatus',['../struct_t_n_b_stat.html#a142a4611299713405d667c5b9f4c4154',1,'TNBStat']]],
-  ['address',['Address',['../class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6',1,'TfrmServers::Address()'],['../struct_t_icmp_echo_reply.html#a86afd85c9b199d26033290245acb3aac',1,'TIcmpEchoReply::Address()']]],
+  ['address',['Address',['../class_tfrm_servers.html#a0b4245191c92226430dced74d3e45eb6',1,'TfrmServers']]],
   ['aemain',['aeMain',['../class_tdm_main.html#a54e01d40cca67dc7adb9de46e5db1eaa',1,'TdmMain']]],
   ['almain',['alMain',['../class_tdm_main.html#a985f9c9d3d00abc839364d7bd242ae9c',1,'TdmMain']]],
   ['autodetect',['AutoDetect',['../class_t_x_p_menu.html#accc3604a3ab6909024e3cda29c6e85bb',1,'TXPMenu']]]

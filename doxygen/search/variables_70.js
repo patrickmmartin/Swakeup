@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['params',['Params',['../_ip_scan_8pas.html#af47f0301cf10e82311cfd4af38570019',1,'IpScan.pas']]],
   ['physaddr_5flen',['PHYSADDR_LEN',['../_lan_wake_8pas.html#a4ea9e2a27a8aab0c91df7691eb2a1679',1,'LanWake.pas']]],
   ['pmnumachines',['pmnuMachines',['../class_tfrm_main.html#a7174f80aae7862ba584b81cbecea4dfb',1,'TfrmMain']]],
   ['pmnuscanmachine',['pmnuScanMachine',['../class_tfrm_main.html#ac136f9936401c256026eb572d2b684d5',1,'TfrmMain']]],

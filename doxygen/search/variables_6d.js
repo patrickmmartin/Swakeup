@@ -2,12 +2,7 @@ var searchData=
 [
   ['mac',['MAC',['../struct_t_machine.html#a17fb3b4db74323e8f6bc5bb214fa7490',1,'TMachine']]],
   ['machines',['Machines',['../class_t_machine_manager.html#a47e5b37509ca1563239353ec98e29702',1,'TMachineManager']]],
-  ['max_5fip_5fstatus',['MAX_IP_STATUS',['../_icmp_8pas.html#ac92f7f3c25dc70cfdec0cd095c949011',1,'Icmp.pas']]],
-  ['max_5fopt_5fsize',['MAX_OPT_SIZE',['../_icmp_8pas.html#a5a4429208601edbd904a1014feca780b',1,'Icmp.pas']]],
-  ['max_5fthread_5fcount',['MAX_THREAD_COUNT',['../_ip_scan_8pas.html#ad7422754c18c6f7aaf1d82e9a2036fa9',1,'IpScan.pas']]],
   ['menubarcolor',['MenuBarColor',['../class_t_x_p_menu.html#a86971dcd41ff9eaf1733c992990704c6',1,'TXPMenu']]],
-  ['mnuaddmachine',['mnuAddMachine',['../class_tfrm_main.html#aed656db3e0f55e7c0cdf71ca976433da',1,'TfrmMain']]],
-  ['mnudeletemachine',['mnuDeleteMachine',['../class_tfrm_main.html#a1b08c968dc9ef70689b5e4f64bf263c1',1,'TfrmMain']]],
   ['mnufile',['mnuFile',['../class_tfrm_main.html#aae25b350a06ff3c261983b9a64b98e43',1,'TfrmMain']]],
   ['mnufileexit',['mnuFileExit',['../class_tfrm_main.html#ac1c32d5c6a55a98766c3e462a093d5e3',1,'TfrmMain']]],
   ['mnuhelp',['mnuHelp',['../class_tfrm_main.html#a6c89fedead5262d2e2b80179b9d7529d',1,'TfrmMain']]],
