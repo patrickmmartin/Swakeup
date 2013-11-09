@@ -146,6 +146,11 @@ var
 begin
 
   found := false;
+  { to avoid duplicates when the MAC address is blank
+    https://github.com/patrickmmartin/Swakeup/issues/22 }
+    if MAC = '' then
+      exit;
+
   for i := 0 to Length(FMachines) - 1 do
   begin
     { a match is on the MAC address }
