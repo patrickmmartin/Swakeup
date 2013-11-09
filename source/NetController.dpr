@@ -1,5 +1,7 @@
 program NetController;
 
+///
+///@mainpage   NetController Wraps up some basic computer wrangling.//////The operations supported are:///- scan local windows networks///- turn on (Wake on Lan)///- query times / up time///- turn off
 
 {$R *.res}
 
