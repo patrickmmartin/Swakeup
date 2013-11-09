@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Net Controller", "index.html", [
+    [ "NetController Wraps up some basic computer wrangling.", "index.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -27,7 +28,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_c_o_m_utils_8pas.html",
-"class_tdm_main.html#acab623c26061db8f4835de8fd3490c98",
+"class_tdm_main.html#ac67b8131af4b97b5350e8cfeaba6286d",
 ];
 
 var navTreeSubIndices = new Array();

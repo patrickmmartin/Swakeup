@@ -1,6 +1,7 @@
 var searchData=
 [
   ['waitcursor',['WaitCursor',['../_cursor_helper_8pas.html#a26aa677f9684854eafea257ac633a800',1,'CursorHelper.pas']]],
+  ['wakeup_2edpr',['wakeup.dpr',['../wakeup_8dpr.html',1,'']]],
   ['wbemprivilegeaudit',['wbemPrivilegeAudit',['../_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ac580027ed421e4272ee0f1d30439d02c',1,'WMIUtils.pas']]],
   ['wbemprivilegebackup',['wbemPrivilegeBackup',['../_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7ab063e3d1d6b764e7e02fef165504009f',1,'WMIUtils.pas']]],
   ['wbemprivilegechangenotify',['wbemPrivilegeChangeNotify',['../_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7a96529bb9f0d7fac962a5f1d5599194d6',1,'WMIUtils.pas']]],
@@ -32,6 +33,7 @@ var searchData=
   ['wm_5fdrawmenuborder',['WM_DRAWMENUBORDER',['../_x_p_menu_8pas.html#a9f87c1ebd404ecba4b7219b9700d2401',1,'XPMenu.pas']]],
   ['wm_5fdrawmenuborder2',['WM_DRAWMENUBORDER2',['../_x_p_menu_8pas.html#a76da5fff1027cf2b121845995cf3e271',1,'XPMenu.pas']]],
   ['wmiutils_2epas',['WMIUtils.pas',['../_w_m_i_utils_8pas.html',1,'']]],
+  ['writeln',['WriteLn',['../wakeup_8dpr.html#a40061833baf137eff840158a5f52f661',1,'wakeup.dpr']]],
   ['writemachines',['WriteMachines',['../class_t_machine_manager.html#a55e555f7b57f6802b3d9d327a9473345',1,'TMachineManager']]],
   ['wsaerrormessage',['WSAErrorMessage',['../_i_p_addresses_8pas.html#ab96e5e48dc5450de968aee8aa71ae8c2',1,'IPAddresses.pas']]]
 ];

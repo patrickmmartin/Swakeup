@@ -7,6 +7,7 @@ var searchData=
   ['imlmaindisabled',['imlMainDisabled',['../class_tdm_resource.html#af25205dfea7bbe052676a5c24ef6de28',1,'TdmResource']]],
   ['imlmainhot',['imlMainHot',['../class_tdm_resource.html#a29d43fdb9e908e31c841d04d893f76e5',1,'TdmResource']]],
   ['imlservers',['imlServers',['../class_tdm_resource.html#aae09783d2c87e892222f377fd1e884ad',1,'TdmResource']]],
+  ['ipaddress',['IPAddress',['../wakeup_8dpr.html#acc05b46cc7d718efe725968209317a8f',1,'wakeup.dpr']]],
   ['isw2k',['IsW2k',['../class_t_x_p_menu.html#a83b29cc02f96a538a0e73b83aeca64c7',1,'TXPMenu']]],
   ['iswnt',['IsWNT',['../class_t_x_p_menu.html#a84289e5e861cb9e17ff9d4622b67c6a2',1,'TXPMenu']]],
   ['iswxp',['IsWXP',['../class_t_x_p_menu.html#a89f85091004ef639957b109898d89718',1,'TXPMenu']]]

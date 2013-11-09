@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  found : boolean;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  ListItem : TListItem;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  i: integer;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  IPAddress, WSAErr : string;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="wakeup_8dpr.html#acc05b46cc7d718efe725968209317a8f">IPAddress</a>, WSAErr : string;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;begin</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  i := 0;</div>
@@ -177,8 +177,8 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;     ListItem.SubItems.Add(Comment);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;     ListItem.ImageIndex := 0;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;     <span class="comment">//</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     <span class="keywordflow">if</span> (<a class="code" href="_name_utils_8pas.html#a9f40b75a60dca75f32a2e187ead9d02f">GetIPFromHost</a>(RemoteName, IPAddress, WSAErr)) then</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;     ListItem.SubItems.Add(<a class="code" href="_m_a_c_utils_8pas.html#a6fef84f3d43541b5eb26620afece3b79">GetRemoteMacAddress</a>(IPAddress));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;     <span class="keywordflow">if</span> (<a class="code" href="_name_utils_8pas.html#a9f40b75a60dca75f32a2e187ead9d02f">GetIPFromHost</a>(RemoteName, <a class="code" href="wakeup_8dpr.html#acc05b46cc7d718efe725968209317a8f">IPAddress</a>, WSAErr)) then</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;     ListItem.SubItems.Add(<a class="code" href="_m_a_c_utils_8pas.html#a6fef84f3d43541b5eb26620afece3b79">GetRemoteMacAddress</a>(<a class="code" href="wakeup_8dpr.html#acc05b46cc7d718efe725968209317a8f">IPAddress</a>));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   end;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;end;</div>
@@ -246,7 +246,7 @@ $(document).ready(function(){initNavTree('_servers_f_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f5ddc4b96038e2e782829a8a44084eee.html">Forms</a></li><li class="navelem"><a class="el" href="_servers_f_8pas.html">ServersF.pas</a></li>
-    <li class="footer">Generated on Sat Nov 9 2013 13:27:03 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:57:28 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

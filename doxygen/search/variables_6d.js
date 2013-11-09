@@ -1,6 +1,7 @@
 var searchData=
 [
   ['mac',['MAC',['../struct_t_machine.html#a17fb3b4db74323e8f6bc5bb214fa7490',1,'TMachine']]],
+  ['macaddress',['MacAddress',['../wakeup_8dpr.html#a42de65c52a2e0bf9974f8684034b67b5',1,'wakeup.dpr']]],
   ['machines',['Machines',['../class_t_machine_manager.html#a47e5b37509ca1563239353ec98e29702',1,'TMachineManager']]],
   ['menubarcolor',['MenuBarColor',['../class_t_x_p_menu.html#a86971dcd41ff9eaf1733c992990704c6',1,'TXPMenu']]],
   ['mnufile',['mnuFile',['../class_tfrm_main.html#aae25b350a06ff3c261983b9a64b98e43',1,'TfrmMain']]],

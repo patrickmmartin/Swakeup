@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_w_m_i_utils_8pas.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('_w_m_i_utils_8pas.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  Result := <span class="charliteral">&#39;(&#39;</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> Privilege := Low(<a class="code" href="_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7">TWbemPrivilegeEnum</a>) to High(<a class="code" href="_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7">TWbemPrivilegeEnum</a>) do</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  begin</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;     if (Privilege in Privileges) then</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;     <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (Privilege in Privileges) then</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;       Result := Result + TWbemPrivilegeEnumStr[Privilege] + &#39;,&#39;;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  end;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  SetLength(Result, Length(Result) - 1);</div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('_w_m_i_utils_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b05a5fa85f84bfc9013183c9d87f9a36.html">Utilities</a></li><li class="navelem"><a class="el" href="_w_m_i_utils_8pas.html">WMIUtils.pas</a></li>
-    <li class="footer">Generated on Sat Nov 9 2013 13:27:04 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:57:29 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

@@ -4,7 +4,7 @@ var searchData=
   ['selectbordercolor',['SelectBorderColor',['../class_t_x_p_menu.html#aff6526d250d12ac073e68f3b57aeb71b',1,'TXPMenu']]],
   ['selectcolor',['SelectColor',['../class_t_x_p_menu.html#a83f465dd582d293ed90a8dcc69227431',1,'TXPMenu']]],
   ['selectfontcolor',['SelectFontColor',['../class_t_x_p_menu.html#a85f35f68ab24d95fb4d95b5f49907a5d',1,'TXPMenu']]],
-  ['sendmagicpacket',['SendMagicPacket',['../_lan_wake_8pas.html#ad0c45834136701069773ddb89b55ceb1',1,'LanWake.pas']]],
+  ['sendmagicpacket',['SendMagicPacket',['../_lan_wake_8pas.html#ad0c45834136701069773ddb89b55ceb1',1,'SendMagicPacket(const string MacAddress, const string IpAddress, Word Port):&#160;LanWake.pas'],['../wakeup_8dpr.html#a6f0e7a7381bfae8476b8d8ccbbf52e9b',1,'SendMagicPacket(MacAddress, IPAddress, Port):&#160;wakeup.dpr']]],
   ['sendmagicpacketraw',['SendMagicPacketRaw',['../_lan_wake_8pas.html#a4c30ae4ec96558735ffb31d9f468498a',1,'LanWake.pas']]],
   ['separatorcolor',['SeparatorColor',['../class_t_x_p_menu.html#a0ce251976e98d6faf0167ebf915e714e',1,'TXPMenu']]],
   ['seppowerlist',['sepPowerList',['../class_tfrm_main.html#ae718b15ad53a0deb003eccbc7a1e721b',1,'TfrmMain']]],

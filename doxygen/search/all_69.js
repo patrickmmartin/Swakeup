@@ -2,6 +2,7 @@ var searchData=
 [
   ['iconbackcolor',['IconBackColor',['../class_t_x_p_menu.html#aac88bcf1dec89ffe4bedf24386ebbced',1,'TXPMenu']]],
   ['iconwidth',['IconWidth',['../class_t_x_p_menu.html#a42c78bb2bc272e10820c1a4ec04fe216',1,'TXPMenu']]],
+  ['if',['if',['../wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113',1,'if():&#160;wakeup.dpr'],['../wakeup_8dpr.html#aa667f6ae0f326130084e2156a423601a',1,'if(ParamCount&lt; 1) then begin Usage(&apos;one argument is required.&apos;):&#160;wakeup.dpr']]],
   ['imgserver',['imgServer',['../class_tfrm_servers.html#a84ddb06ce3f179e84e52e1e886d53ae4',1,'TfrmServers']]],
   ['imlmain',['imlMain',['../class_tdm_resource.html#a5e1aa1caa638e6f50e90e7815fca5c4f',1,'TdmResource']]],
   ['imlmaindisabled',['imlMainDisabled',['../class_tdm_resource.html#af25205dfea7bbe052676a5c24ef6de28',1,'TdmResource']]],
@@ -11,6 +12,8 @@ var searchData=
   ['initcontrols',['InitControls',['../_x_p_menu_8pas.html#af1bd1c9c6134af26c0d37a6e9fc6fc30',1,'XPMenu.pas']]],
   ['inititem',['InitItem',['../class_t_x_p_menu.html#a0a95e8f7cf15bc041fc2f21ddfe99389',1,'TXPMenu']]],
   ['inititems',['InitItems',['../class_t_x_p_menu.html#ab743dbe7f16c3348537a64cdccb33499',1,'TXPMenu']]],
+  ['invalidargs',['InvalidArgs',['../wakeup_8dpr.html#acdb6571a4d334e3c035a5bb2c3601ef7',1,'wakeup.dpr']]],
+  ['ipaddress',['IPAddress',['../wakeup_8dpr.html#acc05b46cc7d718efe725968209317a8f',1,'wakeup.dpr']]],
   ['ipaddresses_2epas',['IPAddresses.pas',['../_i_p_addresses_8pas.html',1,'']]],
   ['iscomponentsubclassed',['IsComponentSubclassed',['../class_t_x_p_menu_manager.html#a414810e852c8aa45d0dfbeca27520e1d',1,'TXPMenuManager']]],
   ['isformsubclassed',['IsFormSubclassed',['../class_t_x_p_menu_manager.html#ae1bc713282403bc774b9f9f9d33d10c4',1,'TXPMenuManager']]],

@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                            NetResource,       <span class="comment">// NULL first time this function is called</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                            hEnum);            <span class="comment">// handle to resource</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    if ( (dwResult &lt;&gt; NO_ERROR )) then</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> ( (dwResult &lt;&gt; NO_ERROR )) then</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    begin</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        HandleError(dwResult, &#39;WNetOpenEnum&#39;);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    end;</div>
@@ -252,13 +252,13 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    PNetRes,                <span class="comment">// LPNETRESOURCE</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                    cbBuffer);              <span class="comment">// buffer size</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      if (ResultEnum = NO_ERROR) then</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (ResultEnum = NO_ERROR) then</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      begin</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          Inc(ResourcesToEnumerate, cEntries);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          for i := 0 to cEntries - 1 do</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          begin</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            HandleEntry(PNetRes[i]);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;           if ( (RESOURCEUSAGE_CONTAINER = (PNetRes[i].dwUsage and RESOURCEUSAGE_CONTAINER))</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;           <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> ( (RESOURCEUSAGE_CONTAINER = (PNetRes[i].dwUsage and RESOURCEUSAGE_CONTAINER))</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                  and not (PNetRes[i].dwDisplayType = RESOURCEDISPLAYTYPE_SERVER) ) then</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          begin</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
@@ -266,7 +266,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;          end;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        end;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      end</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      else if (ResultEnum &lt;&gt; ERROR_NO_MORE_ITEMS) then</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      else <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (ResultEnum &lt;&gt; ERROR_NO_MORE_ITEMS) then</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      begin</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          HandleError(ResultEnum, &#39;WNetEnumResource&#39;);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;          break;</div>
@@ -276,7 +276,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    dwResult := WNetCloseEnum(hEnum);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    if (dwResult &lt;&gt; NO_ERROR) then</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (dwResult &lt;&gt; NO_ERROR) then</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    begin</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        HandleError(dwResult, &#39;WNetCloseEnum&#39;);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    end;</div>
@@ -293,7 +293,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  Index : integer;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;begin</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    if (ErrorCode &lt;&gt; ERROR_EXTENDED_ERROR) then</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (ErrorCode &lt;&gt; ERROR_EXTENDED_ERROR) then</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    begin</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      MessageStr := SysErrorMessage(ErrorCode) + &#39;.&#39;;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    end</div>
@@ -303,7 +303,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                     Description,  sizeof(Description),</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                     Provider, sizeof(Provider));</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        if(WNetResult &lt;&gt; NO_ERROR) then</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a>(WNetResult &lt;&gt; NO_ERROR) then</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        begin</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;          MessageStr := Format(sWNetGetLastErrorFailedFmt, [WNetResult]);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        end;</div>
@@ -344,7 +344,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;begin</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keywordflow">if</span> Assigned(FonContainer) then</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  begin</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    if Assigned(NetResource.lpRemoteName) then</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> Assigned(NetResource.lpRemoteName) then</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      ObjectName := NetResource.lpRemoteName</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    else</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      ObjectName := NetResource.lpProvider;</div>
@@ -356,11 +356,11 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;var</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; ServerName : <span class="keywordtype">string</span>;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;begin</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  if Assigned(FonServer) then</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> Assigned(FonServer) then</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  begin</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    ServerName := NetResource.lpRemoteName;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    if (Pos(&#39;\\&#39;, ServerName) = 1) then</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> (Pos(&#39;\\&#39;, ServerName) = 1) then</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      Delete(ServerName, 1, 2);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    FOnServer(ServerName, NetResource.lpComment);</div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;procedure <a class="code" href="class_t_net_enumerator.html">TNetEnumerator</a>.DoProgress(const ResourcesEnumerated,</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  ResourcesToEnumerate: Cardinal);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;begin</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  if Assigned(fOnProgress) then</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <a class="code" href="wakeup_8dpr.html#a399b0dd0ce1f5f94bd9c163a57f71113">if</a> Assigned(fOnProgress) then</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    FOnProgress(ResourcesEnumerated, ResourcesToEnumerate);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;end;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
@@ -382,7 +382,7 @@ $(document).ready(function(){initNavTree('_net_info_8pas.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b05a5fa85f84bfc9013183c9d87f9a36.html">Utilities</a></li><li class="navelem"><a class="el" href="_net_info_8pas.html">NetInfo.pas</a></li>
-    <li class="footer">Generated on Sat Nov 9 2013 13:27:04 for Net Controller by
+    <li class="footer">Generated on Sat Nov 9 2013 13:57:29 for Net Controller by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

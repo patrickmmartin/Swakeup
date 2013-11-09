@@ -25,6 +25,7 @@ var searchData=
   ['topmenufontcolor',['TopMenuFontColor',['../class_t_x_p_menu.html#ada67e23ec8c794a59a35009e1ea65d2c',1,'TXPMenu']]],
   ['tresourceevent',['TResourceEvent',['../_net_info_8pas.html#a6c84f694ae7e84c3779764bd850784a9',1,'NetInfo.pas']]],
   ['true',['true',['../_x_p_menu_8pas.html#a1a24fc2eb8c1af6d06ac15bcec47f088',1,'XPMenu.pas']]],
+  ['try',['try',['../wakeup_8dpr.html#aad5924f5e54de5259cf5d74d7bcd9470',1,'wakeup.dpr']]],
   ['tserverstats',['TServerStats',['../class_t_server_stats.html',1,'']]],
   ['twaitcursor',['TWaitCursor',['../class_t_wait_cursor.html',1,'TWaitCursor'],['../class_t_wait_cursor.html#ae4f0158c455d552e08a5cc206308c4b5',1,'TWaitCursor::TWaitCursor()']]],
   ['twbemprivilegeenum',['TWbemPrivilegeEnum',['../_w_m_i_utils_8pas.html#a2f83664122d9e6fd1edbf5f3d33bdaf7',1,'WMIUtils.pas']]],
