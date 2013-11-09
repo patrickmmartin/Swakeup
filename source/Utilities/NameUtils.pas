@@ -26,13 +26,14 @@ begin
   IPaddr := '';
   begin
     HEnt := GetHostByName(PAnsiChar(HostName));
-    for i := 0 to HEnt^.h_length - 1 do
-     IPaddr :=
-      Concat(IPaddr,
-      IntToStr(Ord(HEnt^.h_addr_list^[i])) + '.');
-    SetLength(IPaddr, Length(IPaddr) - 1);
-    Result := True;
-  end;
+    if Assigned(HEnt) then
+      for i := 0 to HEnt^.h_length - 1 do
+       IPaddr :=
+        Concat(IPaddr,
+        IntToStr(Ord(HEnt^.h_addr_list^[i])) + '.');
+      SetLength(IPaddr, Length(IPaddr) - 1);
+      Result := True;
+    end;
   WSACleanup;
 end;
 
