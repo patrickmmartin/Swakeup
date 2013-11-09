@@ -12,7 +12,6 @@ uses
   LanWake in 'Utilities\LanWake.pas',
   LanShutdown in 'Utilities\LanShutdown.pas',
   WinError in 'Utilities\WinError.pas',
-  Icmp in 'Imports\Icmp.pas',
   MainDM in 'DataModules\MainDM.pas' {dmMain: TDataModule},
   Machines in 'Model\Machines.pas',
   ServerInfo in 'Utilities\ServerInfo.pas',
