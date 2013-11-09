@@ -19,7 +19,8 @@ var
   i: Integer;
 begin
   Result := False;
-  if WSAStartup($0101, WSAData) <> 0 then begin
+  if WSAStartup($0101, WSAData) <> 0 then
+  begin
     WSAErr := 'Winsock is not responding."';
     Exit;
   end;
