@@ -27,6 +27,7 @@
 #ifdef WIN32
   typedef int in_addr_t;
   typedef size_t socklen_t; 
+  typedef int sa_family_t;
 #else
   // standard error for local errors
   #define SOCKET_ERROR -1
