@@ -13,12 +13,14 @@
   #include "winsock.h"
   #include "stdint.h"
 #else
+  #ifndef S_SPLINT_S
   #include "unistd.h"
   #include "stdlib.h"
   #include "string.h"
   #include "errno.h"
   #include "sys/socket.h"
   #include "netinet/in.h"
+  #endif
 #endif // WIN32
 
 // platform-specific definitions
@@ -142,7 +144,7 @@ int main(int argc, char * argv[]) {
                 sw_print_sock_result(sw_error(), "socket");
 	}
 
-	addr.sin_family = AF_INET;
+	addr.sin_family = (sa_family_t) AF_INET;
 	addr.sin_port = htons(port);
 	addr.sin_addr.s_addr = destination_ip;
 
@@ -151,7 +153,7 @@ int main(int argc, char * argv[]) {
 	if (addr.sin_addr.s_addr == INADDR_BROADCAST) {
 		sooptval = 1;
 		sw_print_sock_result(setsockopt(sock, SOL_SOCKET, SO_BROADCAST,
-						  (void *) &sooptval, (socklen_t) sizeof(sooptval)), "setsockopt");
+						  (void *) &sooptval, sooptval), "setsockopt");
 	}
 
 	memset(magicdata, 0xFF, sizeof(magicdata));
@@ -162,7 +164,7 @@ int main(int argc, char * argv[]) {
 	}
 
 	/* TODO - i don't like the cast to make the warning go away */
-	retval = sendto(sock, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, (socklen_t) sizeof(addr));
+	retval = sendto(sock, magicdata, sizeof(magicdata), 0, (struct sockaddr*) &addr, (int) sizeof(addr));
 	if (retval == SOCKET_ERROR)
 		sw_print_sock_result(SOCKET_ERROR, "sendto");
 	sw_print_sock_result(closesocket(sock), "closesocket");
