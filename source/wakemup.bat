@@ -1,0 +1,1 @@
+FOR /F "eol=; tokens=2 delims=," %%i in (%1) do ..\bin\swakeup.exe %%i
