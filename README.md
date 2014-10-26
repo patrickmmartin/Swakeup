@@ -15,7 +15,7 @@ Delphi 7, C
 
 ## OS
 
-native Windows 32-bit Intel executables - Windpws XP upwards, and most probably earlier versions
+native Windows 32-bit Intel executables - Windows XP upwards, and most probably earlier versions
 
 ## Deliverables
 
