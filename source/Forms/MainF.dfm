@@ -1,9 +1,9 @@
 object frmMain: TfrmMain
   Left = 461
   Top = 190
-  Width = 788
-  Height = 464
   Caption = 'Net Controller'
+  ClientHeight = 405
+  ClientWidth = 772
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -78,7 +78,6 @@ object frmMain: TfrmMain
     Height = 29
     ButtonHeight = 23
     DisabledImages = dmResource.imlMainDisabled
-    Flat = True
     HotImages = dmResource.imlMainHot
     Images = dmResource.imlMain
     TabOrder = 2

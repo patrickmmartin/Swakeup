@@ -22,3 +22,9 @@
 .metadata/
 RemoteSystemsTempFiles
 source/defaulthosts.txt
+*.identcache 
+*.local 
+bin 
+dcu 
+source/Forms/__history/
+source/Utilities/__history/

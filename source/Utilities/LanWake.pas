@@ -113,11 +113,11 @@ begin
     Addr.sin_family := AF_INET;
     Addr.sin_port := htons(Port);
     Addr.sin_addr.S_addr := IP;
-    if Addr.sin_addr.S_addr = INADDR_BROADCAST then
+    if Addr.sin_addr.S_addr = INADDR_BROADCAST then   // TODO(PMM) suspicious
     begin
       OptVal := True;
       CheckWinSockResult(setsockopt(Sock, SOL_SOCKET, SO_BROADCAST,
-                         PChar(@OptVal), SizeOf(OptVal)), 'setsockopt');
+                         PAnsiChar(@OptVal), SizeOf(OptVal)), 'setsockopt');
     end;
     FillChar(MagicData, SizeOf(MagicData), $FF);
     Position := PHYSADDR_LEN;
@@ -150,7 +150,7 @@ begin
   MacAddr[4] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 13, 2));
   MacAddr[5] := StrToInt(HexDisplayPrefix + Copy(MacAddress, 16, 2));
 
-  SendMagicPacketRaw(MacAddr, inet_addr(PChar(IpAddress)), Port);
+  SendMagicPacketRaw(MacAddr, inet_addr(PAnsiChar(AnsiString(IpAddress))), Port);
 
 end;
 

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{25FDEE71-8C9D-41A9-B730-16A03B2C5FCF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NetController.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="wakeup.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NetController">
+        <MSBuild Projects="NetController.dproj"/>
+    </Target>
+    <Target Name="NetController:Clean">
+        <MSBuild Projects="NetController.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NetController:Make">
+        <MSBuild Projects="NetController.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="wakeup">
+        <MSBuild Projects="wakeup.dproj"/>
+    </Target>
+    <Target Name="wakeup:Clean">
+        <MSBuild Projects="wakeup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="wakeup:Make">
+        <MSBuild Projects="wakeup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NetController;wakeup"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NetController:Clean;wakeup:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NetController:Make;wakeup:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
