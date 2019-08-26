@@ -11,8 +11,7 @@ BRCC = $(ROOT)\bin\brcc32.exe
 .dpr.exe: 
 	@echo [build $@]
 	@buildkeys $@
-	$(BRCC) $&.rcscript -fo$&.res
-	$(DCC) 
+	MSbuild $*.dproj
 
 
 
@@ -89,8 +88,14 @@ docs: ..\doc
 	@del /S /Q /F ..\doc\*.* > nul
 	@doxygen 
 
+# builds the Delphi suite of binaries
+delphi: NetController.exe Wakeup.exe
+
+# builds the GCC Windows suite of binaries
+gcc.mingw: swakeup.mingw
+
 # builds the Windows suite of binaries
-default: NetController.exe Wakeup.exe swakeup.mingw
+default: delphi gcc.mingw
 
 
 #lints the c file
